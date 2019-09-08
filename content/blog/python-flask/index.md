@@ -12,8 +12,8 @@ At the end of this blog post (if you are following along), you will have created
 
 [Flask](https://palletsprojects.com/p/flask/) is defined as:
 
-> A lightweight WSGI web application framework. 
-> It is designed to make getting started quick and easy, 
+> A lightweight WSGI web application framework.
+> It is designed to make getting started quick and easy,
 > with the ability to scale up to complex applications.
 
 It can be used to create different types of web applications. Different options include legacy multi-page applications, RESTful or GraphQL APIs, or used to serve static resources. In this tutorial, we will focus on building a RESTful API.
@@ -26,14 +26,14 @@ The first goal is to do a simple GET request on our server and return the essent
 
 First, from the terminal, run the following commands to install flask and flask_restful via pip:
 
-``` powershell
+```powershell
 pip install flask
 pip install flask_restful
 ```
 
 Then create a new directory and a file to start our project:
 
-``` powershell
+```powershell
 mkdir trails-api
 New-Item main.py # use touch main.py on bash
 ```
@@ -44,7 +44,7 @@ From here open the main.py file in your editor of choice. I would highly recomme
 
 The piece of code required is the imports to load the flask library and make it available in our application. In the start of your file add the following:
 
-``` python
+```python
 from flask import Flask
 from flask.views import MethodView
 from flask_restful import Api
@@ -52,16 +52,16 @@ from flask_restful import Api
 
 The next step is to create an instance of Flask and then an instance of our API that uses the new Flask instance. Place the following code below:
 
-``` python
+```python
 app = Flask(__name__)
 api = Api(app)
 ```
 
-The ``` __name__ ``` variable in python refers to the name of the library or module that is currently being imported. If the script is the main file in the program, it will be equal to ``` __main__ ```.
+The `__name__` variable in python refers to the name of the library or module that is currently being imported. If the script is the main file in the program, it will be equal to `__main__`.
 
-After this, we can create our controller. Initially, it will only have a single method, ``` get() ``` that will respond to get requests on our endpoint. The controller class will look something like this:
+After this, we can create our controller. Initially, it will only have a single method, `get()` that will respond to get requests on our endpoint. The controller class will look something like this:
 
-``` python
+```python
 class Trail(MethodView):
     def get(self, id):
         msg = {
@@ -71,26 +71,26 @@ class Trail(MethodView):
         return msg, 200
 ```
 
-This class defines actions that are taken when our API is called. Any logic that handles things like incoming parameters are specified here. Not only is our data object returned here, but also our HTTP status code. ``` 200 ``` indicates that the request was successful and everything executed as indended. For a full list of HTTP status codes and their meanings, see [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
+This class defines actions that are taken when our API is called. Any logic that handles things like incoming parameters are specified here. Not only is our data object returned here, but also our HTTP status code. `200` indicates that the request was successful and everything executed as indended. For a full list of HTTP status codes and their meanings, see [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
 
-Next, we define our resource in our ``` api ``` object:
+Next, we define our resource in our `api` object:
 
-``` python
+```python
 api.add_resource(Trail, "/trail/<string:id>")
 ```
 
-We pass in our controller here. Also, the ``` <string:id> ``` part of the URL specified here defines a template. This template indicates that the ID of the item should be passed from the URL to a parameter in the controller (the ``` id ```) parameter in the ``` get ``` method signature).
+We pass in our controller here. Also, the `<string:id>` part of the URL specified here defines a template. This template indicates that the ID of the item should be passed from the URL to a parameter in the controller (the `id`) parameter in the `get` method signature).
 
 After this we can invoke our application via this bit of boiler-plate python code:
 
-``` python
+```python
 if __name__ == "__main__":
     app.run(debug=True, threaded=True)
 ```
 
 This code determines if the script is a library or if it is a running entrypoint script. If it is an entrypoint script, then the API is started and flask is run. In order to start this, in a terminal, run the following command:
 
-``` powershell
+```powershell
 python3 .\main.py
 ```
 
