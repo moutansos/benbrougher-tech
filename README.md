@@ -5,8 +5,10 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby's blog starter
+  benbrougher.tech blog
 </h1>
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2e59ef6d-8d80-48c5-8185-670726126f72/deploy-status)](https://app.netlify.com/sites/cocky-wiles-add04c/deploys)
 
 Kick off your project with this blog boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
@@ -90,8 +92,3 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 - **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
 
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-blog)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
