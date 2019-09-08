@@ -37,7 +37,8 @@ const Bio = () => {
         marginBottom: rhythm(2.5),
       }}
     >
-      <Image
+      {/*TODO: Fix the image*/
+        /* <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author}
         style={{
@@ -49,9 +50,9 @@ const Bio = () => {
         imgStyle={{
           borderRadius: `50%`,
         }}
-      />
+      /> */}
       <p>
-        Currently a Work-In-Progress.
+        This site is currently a work-in-progress.
         Written by <strong>{author}</strong> who lives and works in the Pacific 
         Northwest building useful things.
         {` `}
