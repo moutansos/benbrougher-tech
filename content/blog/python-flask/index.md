@@ -26,14 +26,14 @@ The first goal is to do a simple GET request on our server and return the essent
 
 First, from the terminal, run the following commands to install flask and flask_restful via pip:
 
-```powershell
+``` powershell
 pip install flask
 pip install flask_restful
 ```
 
 Then create a new directory and a file to start our project:
 
-```powershell
+``` powershell
 mkdir trails-api
 New-Item main.py # use touch main.py on bash
 ```
