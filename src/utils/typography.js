@@ -1,11 +1,16 @@
 import Typography from "typography"
 import Wordpress2016 from "typography-theme-wordpress-2016"
+import styleValues from "../style-values"
 
 Wordpress2016.overrideThemeStyles = () => {
   return {
     "a.gatsby-resp-image-link": {
       boxShadow: `none`,
     },
+    blockquote: {
+      color: 'rgb(200, 200, 200)',
+      borderLeft: `0.32813rem solid ${styleValues.primaryText}`
+    }
   }
 }
 
