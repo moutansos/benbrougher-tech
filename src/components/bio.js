@@ -53,7 +53,7 @@ const Bio = () => {
       <p>
         Currently a Work-In-Progress.
         Written by <strong>{author}</strong> who lives and works in the Pacific 
-        Northwest building useful things.
+        Northwest developing solutions to problems (usually with software).
         {` `}
       </p>
     </div>
