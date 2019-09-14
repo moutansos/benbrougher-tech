@@ -6,7 +6,7 @@ description: "A Guide to Starting an API With Flask and Python"
 
 I am primarily a back-end .NET Core developer, so when I heard that I would perhaps soon be using python for a project at work, I knew I had to refresh my Python skills. My start in programming stemmed from playing with Python 2 in middle-school, but that has long since been forgotten when I entered the .NET and NodeJS worlds. My experience then with Python had been passing and transient at best, barely scratching the surface of the language and it's capabilities at the time. This guide is a guide with steps I followed as part of my reintroduction to Python. This is a basic guide for anyone looking to get started developing APIs with Python 3 and Flask. This tutorial assumes that you have Python 3 and PIP installed in your path. I also use PowerShell as my terminal, so the commands may be different depending on your system.
 
-At the end of this blog post (if you are following along), you will have created a full REST API on flask. The subject of shipping the API into production, due to performance considerations, is better set in its own blog post in the future. Stay tuned for a way to put your flask API in a docker container and run it in production from there.
+At the end of this blog post (if you are following along), you will have created a basic Hello World API in Flask.
 
 # What is Flask?
 
@@ -34,7 +34,8 @@ pip install flask_restful
 Then create a new directory and a file to start our project:
 
 ``` powershell
-mkdir trails-api
+mkdir hello-world-api
+cd hello-world-api
 New-Item main.py # use touch main.py on bash
 ```
 
@@ -62,10 +63,10 @@ The `__name__` variable in python refers to the name of the library or module th
 After this, we can create our controller. Initially, it will only have a single method, `get()` that will respond to get requests on our endpoint. The controller class will look something like this:
 
 ```python
-class Trail(MethodView):
+class HelloWorld(MethodView):
     def get(self, id):
         msg = {
-            "message": "Hello World! Any good hiking trails out there?"
+            "message": "Hello World!"
         }
 
         return msg, 200
@@ -76,7 +77,7 @@ This class defines actions that are taken when our API is called. Any logic that
 Next, we define our resource in our `api` object:
 
 ```python
-api.add_resource(Trail, "/trail/<string:id>")
+api.add_resource(HelloWorld, "/hello/world")
 ```
 
 We pass in our controller here. Also, the `<string:id>` part of the URL specified here defines a template. This template indicates that the ID of the item should be passed from the URL to a parameter in the controller (the `id`) parameter in the `get` method signature).
@@ -94,6 +95,9 @@ This code determines if the script is a library or if it is a running entrypoint
 python3 .\main.py
 ```
 
+> Note: Depeding on your setup you may be able to use ```python``` instead of ```python3```. 
+> This depends on how the Python distribution is set up on your system.
+
 This will start the flask application and you should see something like this:
 
 ```
@@ -106,10 +110,26 @@ This will start the flask application and you should see something like this:
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 ```
 
-# Using REST-full Flask
+You can now make a request to your API. Utilizing something like Postman, curl, or Invoke-WebRequest you can get the data from the API. For example:
 
-# Setting Up Basic CRUD Operations
+On Linux:
+``` bash
+curl http://127.0.0.1:5000/hello/world
+```
 
-# Connecting to MongoDB
+Or on PowerShell:
+``` powershell
+Invoke-WebRequest http://127.0.0.1:5000/hello/world
+```
 
-# Performance Considerations
+You should see a response that looks like this:
+
+``` json
+{
+    "message": "Hello World!"
+}
+```
+
+# Conclusion
+
+You now have a simple working REST API! Stay tuned for how to use use REST-full Flask to it's full potential set up basic Create, Read, Update and Delete, operations, and also how to connect it to a database for storing the data in the API long term. If you find any issues with this blog, please submit a pull request on my [repo here](https://github.com/moutansos/benbrougher-tech).

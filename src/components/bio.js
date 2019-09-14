@@ -52,7 +52,6 @@ const Bio = () => {
         }}
       /> */}
       <p>
-        This site is currently a work-in-progress.
         Written by <strong>{author}</strong> who lives and works in the Pacific 
         Northwest developing solutions to problems (usually with software).
         {` `}
