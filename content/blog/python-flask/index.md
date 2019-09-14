@@ -72,7 +72,7 @@ class HelloWorld(MethodView):
         return msg, 200
 ```
 
-This class defines actions that are taken when our API is called. Any logic that handles things like incoming parameters are specified here. Not only is our data object returned here, but also our HTTP status code. `200` indicates that the request was successful and everything executed as indended. For a full list of HTTP status codes and their meanings, see [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
+This class defines actions that are taken when our API is called. Any logic that handles things like incoming parameters are specified here. Not only is our data object returned here, but also our HTTP status code. `200` indicates that the request was successful and everything executed as indented. For a full list of HTTP status codes and their meanings, see [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
 
 Next, we define our resource in our `api` object:
 
@@ -89,13 +89,13 @@ if __name__ == "__main__":
     app.run(debug=True, threaded=True)
 ```
 
-This code determines if the script is a library or if it is a running entrypoint script. If it is an entrypoint script, then the API is started and flask is run. In order to start this, in a terminal, run the following command:
+This code determines if the script is a library or if it is a running entry point script. If it is an entry point script, then the API is started and flask is run. In order to start this, in a terminal, run the following command:
 
 ```powershell
 python3 .\main.py
 ```
 
-> Note: Depeding on your setup you may be able to use ```python``` instead of ```python3```. 
+> Note: Depending on your setup you may be able to use ```python``` instead of ```python3```. 
 > This depends on how the Python distribution is set up on your system.
 
 This will start the flask application and you should see something like this:
