@@ -3,7 +3,7 @@ module.exports = {
     title: `benbrougher.tech`,
     author: `Ben Brougher`,
     description: `A Place to Share and Collaborate with Fellow Developers`,
-    siteUrl: `https://benbrougher.tech/`
+    siteUrl: `https://benbrougher.tech/`,
   },
   plugins: [
     {
