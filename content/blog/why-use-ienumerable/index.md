@@ -1,6 +1,6 @@
 ---
 title: Why Use IEnumerable?
-date: "2019-09-13T22:12:03.284Z"
+date: "2019-09-22T22:12:03.284Z"
 description: "What is IEnumerable in C#? And why should I use it?"
 ---
 
@@ -22,6 +22,74 @@ If you've had exposure to design patterns at all, what they are calling an "enum
 There is a large trend in the programming community towards a concept of immutability, that basically means the thing that you are working with is guaranteed not to change. ```IEnumerable``` does not guarantee that the object with in it is immutable, but it does guarantee that nothing can change the set of objects represented by the ```IEnumerable``` without creating a new variable of that type. Looking at the docs [here](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1?view=netframework-4.8), there are no methods for adding items, only for getting them. This seems like a major limitation, but in practice, it reduces errors and promotes writing clean, concise, intent-revealing code. It becomes obvious if the variable you are working with is a filtered version of the original list of items or not when the variable name reflects it. 
 
 # Case for IEnumerable #2: LINQ Functions
+
+The other advantage to using IEnumerable consistently, is the use of LINQ functions and statements. Instead of iterating over a collection, they provide a generic way for you to manipulate lists. A few of these that I use most frequently are below:
+
+## The Where Function
+
+You might have code that looks like the following:
+
+``` csharp
+using System;
+using System.Collections.Generic;
+
+namespace IEnumerable_Blog_Post
+{
+    class Program
+    {
+        private static readonly List<Car> CARS = new List<Car>()
+        {
+            new Car()
+            {
+                Make = "Ford",
+                Model = "Edge"
+            },
+            new Car()
+            {
+                Make = "Ford",
+                Model = "Mustang"
+            },
+            new Car()
+            {
+                Make = "Toyota",
+                Model = "Supra"
+            }
+        };
+
+        static void Main(string[] args)
+        {
+            List<Car> fordCars = new List<Car>();
+            foreach (Car car in CARS)
+                if(car.Make == "Ford")
+                    fordCars.Add(car);
+        }
+    }
+
+    class Car
+    {
+        public string Make { get; set; }
+        public string Model { get; set; }
+    }
+}
+```
+
+Here I provide the car class and the list of cars for context, but I would like to bring your attention to the ```Main()``` method. We perform a simple operation, loop through the old array, and only put the cars that are of the model "Ford" in the new array. This is rather verbose and long winded. And it mutates the ```fordCars``` list as it is adding them. This is not idea, as it increases the chances of bugs. 
+
+Using the Where method, the Main function looks something like this:
+
+``` csharp
+using System.Linq;
+
+...
+
+        static void Main(string[] args)
+        {
+            IEnumerable<Car> fordCars = CARS.Where(car => car.Make == "Ford");
+        }
+...
+```
+
+This makes the code more concise, and if you are accustomed to the syntax, makes it more simple to reason about.
 
 # Case for IEnumerable #3: Performance
 
