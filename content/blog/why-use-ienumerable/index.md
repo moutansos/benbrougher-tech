@@ -183,7 +183,7 @@ There are many other examples of LINQ methods, a few are listed here:
 
 # Case for IEnumerable and LINQ #3: Performance
 
-## Lazily Evaluated
+When using ```IEnumerable```s there is also the added advantage of being lazily evaluated. Chaining linq statements are only evaluated upon iteration. This means that no operation is performed until the collection is iterated over. Then it will perform the specified transforms.
 
 ## Aren't These like Streams in Java?
 
@@ -191,6 +191,8 @@ If you have experience with Java, you may be asking, aren't these very much like
 
 # Case for IEnumerable #4: Programming to and Interface, Not an Implementation
 
-
+The last and final advantage to using ```IEnumerable``` over ```List``` is that by using the ```IEnumerable``` type, you are programming to an interface and not an implementation. This decreases the coupling on the collection underneath and provides a better way to manage collections of data. This is widely accepted as a good practice in object oriented coding, that leads to cleaner, easier to test code.
 
 # Conclusion
+
+This concept of ```IEnumerable``` is an extremely powerful one. It allows you to reduce boilerplate code while retaining performance. It is not without its downsides. Debugging requires more breakpoints and setting a breakpoint within a lambda is hard without breaking it into a code block. This however is weighed against the advantage of declaring transforms on data, rather than performing the underlying operations, decreasing the need for the debugger in the first place.
