@@ -196,3 +196,5 @@ The last and final advantage to using ```IEnumerable``` over ```List``` is that 
 # Conclusion
 
 This concept of ```IEnumerable``` is an extremely powerful one. It allows you to reduce boilerplate code while retaining performance. It is not without its downsides. Debugging requires more breakpoints and setting a breakpoint within a lambda is hard without breaking it into a code block. This however is weighed against the advantage of declaring transforms on data, rather than performing the underlying operations, decreasing the need for the debugger in the first place.
+
+If you find any issues with this blog or blog post, please submit a pull request or just an issue on my [repo here](https://github.com/moutansos/benbrougher-tech).
