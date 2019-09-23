@@ -21,11 +21,11 @@ If you've had exposure to design patterns at all, what they are calling an "enum
 
 There is a large trend in the programming community towards a concept of immutability, that basically means the thing that you are working with is guaranteed not to change. ```IEnumerable``` does not guarantee that the object with in it is immutable, but it does guarantee that nothing can change the set of objects represented by the ```IEnumerable``` without creating a new variable of that type. Looking at the docs [here](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1?view=netframework-4.8), there are no methods for adding items, only for getting them. This seems like a major limitation, but in practice, it reduces errors and promotes writing clean, concise, intent-revealing code. It becomes obvious if the variable you are working with is a filtered version of the original list of items or not when the variable name reflects it. 
 
-# Case for IEnumerable #2: LINQ Functions
+# Case for IEnumerable #2: LINQ Methods
 
 The other advantage to using IEnumerable consistently, is the use of LINQ functions and statements. Instead of iterating over a collection, they provide a generic way for you to manipulate lists. A few of these that I use most frequently are below:
 
-## The Where Function
+## The Where Method
 
 You might have code that looks like the following:
 
@@ -75,7 +75,7 @@ namespace IEnumerable_Blog_Post
 
 Here I provide the car class and the list of cars for context, but I would like to bring your attention to the ```Main()``` method. We perform a simple operation, loop through the old array, and only put the cars that are of the model "Ford" in the new array. This is rather verbose and long winded. And it mutates the ```fordCars``` list as it is adding them. This is not idea, as it increases the chances of bugs. 
 
-Using the Where method, the Main function looks something like this:
+Using the ```Where``` method, the ```Main``` function looks something like this:
 
 ``` csharp
 using System.Linq;
@@ -91,16 +91,106 @@ using System.Linq;
 
 This makes the code more concise, and if you are accustomed to the syntax, makes it more simple to reason about.
 
-# Case for IEnumerable #3: Performance
+## The Select Method
+
+The next most useful LINQ method, in my experience, is the ```Select``` method. Imagine (using the same class and list) the following operation:
+
+``` csharp
+...
+        static void Main(string[] args)
+        {
+            List<string> carNames = new List<string>();
+            foreach (Car car in CARS)
+                carNames.Add($"{car.Make} {car.Model}");
+        }
+...
+```
+
+(Ignoring that this could be solved with an overridden ```ToString``` method. This has the same problem as the above. It mutates a list to create a list separate from the original. In all actuality, with LINQ it could be written like this:
+
+``` csharp
+...
+        static void Main(string[] args)
+        {
+            IEnumerable<string> carNames = CARS.Select(car => $"{car.Make} {car.Model}");
+        }
+...
+```
+
+This creates a fresh new ```IEnumerable``` object that contains the full names of the cars.
+
+## The Union Method
+
+Another is the ```Union``` method. Sometimes we might need to combine collections together into a single enumerable list. The following shows how you would combine the two:
+
+``` csharp
+using System.Collections.Generic;
+
+namespace IEnumerable_Blog_Post
+{
+    class Program
+    {
+        private static readonly string[] PRIMARY_COLORS = new string[]
+        {
+            "Red",
+            "Blue",
+            "Green"
+        };
+
+        private static readonly string[] SECONDARY_COLORS = new string[]
+        {
+            "Yellow",
+            "Cyan",
+            "Magenta"
+        };
+
+        static void Main(string[] args)
+        {
+            List<string> colors = new List<string>();
+
+            foreach (string color in PRIMARY_COLORS)
+                colors.Add(color);
+
+            foreach (string color in SECONDARY_COLORS)
+                colors.Add(color);
+        }
+    }
+}
+
+```
+
+A better way of performing this would be the following:
+
+``` csharp
+...
+        static void Main(string[] args)
+        {
+            IEnumerable<string> colors = PRIMARY_COLORS.Union(SECONDARY_COLORS);
+        }
+...
+```
+
+This combines the two arrays into a single enumerable that can be iterated upon.
+
+## Others
+
+There are many other examples of LINQ methods, a few are listed here:
+
+- ```Distinct``` - Gets only the unique items in the list
+- ```SelectMany``` - Flattens the list of lists into a single list
+- ```ToDictionary``` - Creates a dictionary from a list of items when shown how to access the key and value
+- Many others listed [here](https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable?view=netframework-4.8).
+
+# Case for IEnumerable and LINQ #3: Performance
 
 ## Lazily Evaluated
 
-## Aren't these like Streams in Java?
+## Aren't These like Streams in Java?
 
 If you have experience with Java, you may be asking, aren't these very much like Java's Streams? The answer is they address the same problem, but they don't have the performance limitations or the restrictions that Streams do. ```IEnumerable```s are usually just as performant, or even more-so, than their simple foreach counterparts. In addition, you may iterate over the collection, not just once like Streams, but as many times as you wish. This removes most of the limitations of Streams while retaining the benefits (and using less code overall).
 
 # Case for IEnumerable #4: Programming to and Interface, Not an Implementation
 
-# Examples of Usage
+
 
 # Conclusion
