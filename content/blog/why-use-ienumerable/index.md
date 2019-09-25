@@ -119,9 +119,9 @@ The next most useful LINQ method, in my experience, is the ```Select``` method. 
 
 This creates a fresh new ```IEnumerable``` object that contains the full names of the cars.
 
-## The Union Method
+## The Contcat Method
 
-Another is the ```Union``` method. Sometimes we might need to combine collections together into a single enumerable list. The following shows how you would combine the two:
+Another is the ```Concat``` method. Sometimes we might need to combine collections together into a single enumerable list. The following shows how you would combine the two:
 
 ``` csharp
 using System.Collections.Generic;
@@ -165,7 +165,7 @@ A better way of performing this would be the following:
 ...
         static void Main(string[] args)
         {
-            IEnumerable<string> colors = PRIMARY_COLORS.Union(SECONDARY_COLORS);
+            IEnumerable<string> colors = PRIMARY_COLORS.Concat(SECONDARY_COLORS);
         }
 ...
 ```
@@ -191,7 +191,7 @@ If you have experience with Java, you may be asking, aren't these very much like
 
 # Case for IEnumerable #4: Programming to and Interface, Not an Implementation
 
-The last and final advantage to using ```IEnumerable``` over ```List``` is that by using the ```IEnumerable``` type, you are programming to an interface and not an implementation. This decreases the coupling on the collection underneath and provides a better way to manage collections of data. This is widely accepted as a good practice in object oriented coding, that leads to cleaner, easier to test code.
+The last and final advantage to using ```IEnumerable``` over ```List``` is that by using the ```IEnumerable``` type, you are programming to an interface and not an implementation. This decreases the coupling on the collection underneath and provides a better way to manage collections of data. This is widely accepted as a good practice in object oriented coding, that leads to cleaner, easier to test code. This is especially true for incoming parameters and return types. These are places that should use an interface (not just IEnumerable but interfaces in general), because if the underlying implementation changes, modifications won't have to be made to the consumers of that function or class. 
 
 # Conclusion
 
