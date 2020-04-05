@@ -52,7 +52,10 @@ const Bio = () => {
       /> */}
       <p>
         Written by <strong>{author}</strong> who lives and works in the Pacific 
-        Northwest developing solutions to problems (usually with software).
+        Northwest developing solutions to problems (usually with software). He 
+        graduated 2020 from Eastern Washington University as a Computer Science Major, 
+        Bachelor of Science (BS), and works engineering and developing software 
+        solutions in the enterprise telecommunications industry.
         {` `}
       </p>
     </div>
