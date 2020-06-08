@@ -5,14 +5,12 @@ import SEO from '../components/seo';
 
 class Articles extends React.Component {
   constructor(props) {
-      super(props);
-      this.scriptRef = createRef();
+    super(props);
+    this.articlesBoardRef = createRef();
   }
 
   componentDidMount() {
-    debugger;
-    const script = this.scriptRef.current
-    window.eval(script);
+    window.TrelloBoards.create('https://trello.com/b/qo1G8apM', this.articlesBoardRef.current);
   }
 
   render() {
@@ -26,10 +24,12 @@ class Articles extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="Articles" />
         <h1>Articles by Other Authors</h1>
-        <script
-          ref={this.scriptRef}
-          src="https://trello.com/b/qo1G8apM.js"
-        ></script>
+        <p>
+          Below is a link to my library of articles that I've read and kept. All manner of content is referenced here.
+          From things like technical deep dives of compiler architecture to project management strategies. If I feel that
+          it could be useful it's here.
+        </p>
+        <div ref={this.articlesBoardRef}></div>
       </Layout>
     );
   }
