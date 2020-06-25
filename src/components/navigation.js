@@ -26,7 +26,7 @@ class Navigation extends React.Component {
                 <Link style={linkStyle} to={'/articles'}>
                     <h4 style={linkLabel}>Article Library</h4>
                 </Link>
-                <a style={linkStyle} href='https://www.notion.so/msyke/Knowledge-Base-c10ec00792df48c48a044d01d4348d88' target="_blank">
+                <a style={linkStyle} href='https://www.notion.so/msyke/Knowledge-Base-c10ec00792df48c48a044d01d4348d88' target="_blank" rel="noopener noreferrer">
                     <h4 style={linkLabel}>Knowledge Base</h4>
                 </a>
             </nav>
