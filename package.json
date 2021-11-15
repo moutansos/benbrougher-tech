@@ -7,13 +7,10 @@
   "bugs": {
     "url": "https://github.com/moutansos/benbrougher-tech/issues"
   },
-  "dependencies": {
-    "typography": "^0.16.19",
-    "typography-theme-wordpress-2016": "^0.16.19"
-  },
   "devDependencies": {
     "@astrojs/renderer-preact": "^0.2.2",
     "astro": "^0.20.12",
+    "autoprefixer": "^10.4.0",
     "prettier": "^1.19.1"
   },
   "license": "MIT",
