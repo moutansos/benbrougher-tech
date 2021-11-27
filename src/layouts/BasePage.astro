@@ -1,0 +1,29 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import BaseFooter from "../components/BaseFooter.astro";
+import Navigation from "../components/Navigation.astro";
+
+const { title } = Astro.props;
+---
+<html lang="en">
+    <head>
+        <BaseHead title={title} />
+    </head>
+    <body>
+        <Navigation />
+        <slot />
+        <BaseFooter />
+    </body>
+</html>
+
+<style>
+body {
+    --primaryAccent: hsl(24, 100%, 50%);
+    --primaryText: #d2cec6;
+    --accentText: rgb(0, 255, 0);
+    --primaryBackground: rgb(33, 33, 33);
+
+    color: var(--primaryText);
+    background-color: var(--primaryBackground);
+}
+</style>

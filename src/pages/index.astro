@@ -1,12 +1,8 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import BaseFooter from "../components/BaseFooter.astro";
+import BasePage from "../layouts/BasePage.astro";
+import Bio from "../components/Bio.astro";
 ---
-<html lang="en">
-    <head>
-        <BaseHead title="Home" />
-    </head>
-    <body>
-        <BaseFooter />
-    </body>
-</html>
+
+<BasePage title="Home">
+    <Bio />
+</BasePage>
