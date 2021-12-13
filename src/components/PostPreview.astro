@@ -1,0 +1,15 @@
+---
+const { post } = Astro.props;
+const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
+    month: 'long',
+    year: 'numeric',
+    day: 'numeric'
+});
+---
+<article>
+    <a href={post.url}>
+        <h3>{post.title}</h3>
+    </a>
+    <p>{formattedDate}</p>
+    <p>{post.description}</p>
+</article>
