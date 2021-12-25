@@ -2,6 +2,7 @@
 title: Getting Started With API Development in Flask
 date: "2019-09-13T22:12:03.284Z"
 description: "A Guide to Starting an API With Flask and Python"
+layout: '../../layouts/BlogPost.astro'
 ---
 
 I am primarily a back-end .NET Core developer, so when I heard that I would perhaps soon be using python for a project at work, I knew I had to refresh my Python skills. My start in programming stemmed from playing with Python 2 in middle-school, but that has long since been forgotten when I entered the .NET and NodeJS worlds. My experience then with Python had been passing and transient at best, barely scratching the surface of the language and it's capabilities at the time. This guide is a guide with steps I followed as part of my reintroduction to Python. This is a basic guide for anyone looking to get started developing APIs with Python 3 and Flask. This tutorial assumes that you have Python 3 and PIP installed in your path. I also use PowerShell as my terminal, so the commands may be different depending on your system.

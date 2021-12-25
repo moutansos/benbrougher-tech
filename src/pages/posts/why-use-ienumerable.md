@@ -2,6 +2,7 @@
 title: Why Use IEnumerable?
 date: '2019-09-22T22:12:03.284Z'
 description: 'What is IEnumerable in C#? And why should I use it?'
+layout: '../../layouts/BlogPost.astro'
 ---
 
 If C# is new to you, and you've been wondering what the heck this `IEnumerable` thing is about and why everyone uses it everywhere, you aren't alone. Other languages like Java don't have anything similar to it, and when using it you may run into issues like, "how do I add things to this list?", or "how do I change types from one to another". You may also ask yourself, "why not just add or remove items in a regular `List` and call it a day?" The answers lie in this post. By the end of it, you should will understand what `IEnumerable` is and how to not only understand the use case, but hopefully come out the other side of this blog post with the knowledge needed to build better applications. But first, what exactly is it?
@@ -189,7 +190,7 @@ When using `IEnumerable`s there is also the added advantage of being lazily eval
 
 If you have experience with Java, you may be asking, aren't these very much like Java's Streams? The answer is they address the same problem, but they don't have the performance limitations or the restrictions that Streams do. `IEnumerable`s are usually just as performant, or even more-so, than their simple foreach counterparts. In addition, you may iterate over the collection, not just once like Streams, but as many times as you wish. This removes most of the limitations of Streams while retaining the benefits (and using less code overall).
 
-# Case for IEnumerable #4: Programming to and Interface, Not an Implementation
+# Case for IEnumerable #4: Programming to an Interface, Not an Implementation
 
 The last and final advantage to using `IEnumerable` over `List` is that by using the `IEnumerable` type, you are programming to an interface and not an implementation. This decreases the coupling on the collection underneath and provides a better way to manage collections of data. This is widely accepted as a good practice in object oriented coding, that leads to cleaner, easier to test code. This is especially true for incoming parameters and return types. These are places that should use an interface (not just IEnumerable but interfaces in general), because if the underlying implementation changes, modifications won't have to be made to the consumers of that function or class.
 

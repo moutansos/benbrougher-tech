@@ -3,6 +3,7 @@ title: 'How to Use a Vue.js Event Bus'
 date: '2020-03-31T22:12:03.284Z'
 description: 'What are event busses in Vue.js and how do we go about using them?'
 featuredImage: front-image.jpg
+layout: '../../layouts/BlogPost.astro'
 ---
 
 > Note: This guide only applies to Vue 2. Vue 3 dropped support for event busses as outlined [here](https://v3.vuejs.org/guide/migration/events-api.html#overview).
