@@ -4,5 +4,24 @@ import BasePage from "./BasePage.astro"
 const { content } = Astro.props;
 ---
 <BasePage title={content.title}>
-    <slot />
+    <h1 class="main-title">{ content.title }</h1>
+    <main>
+        <slot />
+    </main>
 </BasePage>
+
+<style>
+h1 {
+    margin-top: 1.75em;
+    font-family: Montserrat, sans-serif;
+}
+
+.main-title {
+    margin-bottom: 0;
+}
+
+main :global(h1) {
+    margin-top: 1.75em;
+    font-family: Montserrat, sans-serif;
+}
+</style>
