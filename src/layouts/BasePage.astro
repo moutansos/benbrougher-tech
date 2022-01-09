@@ -6,16 +6,17 @@ import BaseHeader from "../components/BaseHeader.astro";
 
 export interface Props {
     title: string,
+    smallHeader: boolean
 }
 
-const { title } = Astro.props;
+const { title, smallHeader } = Astro.props;
 ---
 <html lang="en">
     <head>
-        <BaseHead title={title} />
+        <BaseHead title={title}/>
     </head>
     <body>
-        <BaseHeader />
+        <BaseHeader smallHeader={smallHeader}/>
         <Navigation />
         <slot />
         <BaseFooter />

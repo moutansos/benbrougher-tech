@@ -1,21 +1,36 @@
 ---
 import { SITE_NAME } from "../constants";
+
+export interface Props {
+    smallHeader: boolean
+}
+
+const { smallHeader } = Astro.props;
+const headerStyle = smallHeader ? "small-header" : "big-header" ;
+const headerProps = `main-header ${headerStyle}`;
 ---
 
-<header class="main-header">
+<header class={headerProps}>
     <a href="/">
-        <h1 class="main-header">{SITE_NAME}</h1>
+        <h1>{SITE_NAME}</h1>
     </a>
 </header>
 
 <style>
+.big-header {
+    font-size: 2em;
+}
+
+.small-header {
+    font-size: 0.8em;
+}
+
 .main-header h1 {
     box-shadow: none;
     box-sizing: border-box;
     color: var(--primaryAccent);
     cursor: pointer;
     display: inline;
-    font-size: 63.2456px;
     font-family: 'Montserrat', sans-serif;
     width: auto;
     text-decoration: none;
