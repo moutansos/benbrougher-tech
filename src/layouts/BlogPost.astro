@@ -10,13 +10,16 @@ const formattedDate = Intl.DateTimeFormat('en-US', {
 ---
 <BasePage title={content.title} smallHeader={true}>
     <h1 class="main-title">{ content.title }</h1>
-    <p class="date-tag">{formattedDate}</p>
+    <div class="date-tag">{formattedDate}</div>
     {content.featuredImage && (
         <img src={content.featuredImage} />
     )}
     <main>
         <slot />
     </main>
+    <a href="/">← Back to Blog Posts</a>
+    <br />
+    <br />
 </BasePage>
 
 <style>
@@ -34,14 +37,19 @@ h1 {
     margin-top: 0;
     margin-bottom: 2em;
     font-family: 'Merriweather', 'Georgia', serif;
+    font-size: 0.9em;
 }
 
 img {
-    max-width: 85vw;
+    max-width: 100%;
+}
+
+main {
+    padding-bottom: 5em;
 }
 
 main :global(img) {
-    max-width: 85vw;
+    max-width: 100%;
 }
 
 main :global(h1) {
@@ -69,5 +77,14 @@ main :global(blockquote) {
     margin-bottom: 1em;
     font-size: 1.4em;
     font-style: italic;
+}
+
+main :global(a) {
+    color: var(--linkColor);
+}
+
+a {
+    font-size: 1.25em;
+    color: var(--linkColor);
 }
 </style>

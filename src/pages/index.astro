@@ -6,7 +6,7 @@ import PostPreview from "../components/PostPreview.astro";
 const blogPosts = Astro.fetchContent("./posts/*.md");
 ---
 
-<BasePage title="Home">
+<BasePage title="Home" smallHeader={false}>
     <Bio />
     {blogPosts.map((post) => {
         return <PostPreview post={post} />
