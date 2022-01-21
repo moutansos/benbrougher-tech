@@ -1,0 +1,23 @@
+---
+import { SITE_NAME, SITE_DESCRIPTION, AUTHOR } from "../constants.js";
+
+export interface Props {
+    description: string | null | undefined;
+    title: string | undefined;
+}
+
+const { description, title } = Astro.props;
+
+const metaDescription = description ?? SITE_DESCRIPTION;
+---
+
+<meta charset="UTF-8">
+<meta name="description" content={metaDescription}>
+<meta name="og:title" content={title}>
+<meta name="og:description" content={metaDescription}>
+<meta name="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content={AUTHOR}>
+<meta name="twitter:title" content={title}>
+<meta name="twitter:description" content={metaDescription}>
+

@@ -3,17 +3,22 @@ import BaseHead from "../components/BaseHead.astro";
 import BaseFooter from "../components/BaseFooter.astro";
 import Navigation from "../components/Navigation.astro";
 import BaseHeader from "../components/BaseHeader.astro";
+import Seo from "../components/Seo.astro";
+import { SITE_NAME } from "../constants.ts";
 
 export interface Props {
-    title: string,
-    smallHeader: boolean
+    title: string | undefined;
+    description: string | undefined;
+    smallHeader: boolean;
 }
 
-const { title, smallHeader } = Astro.props;
+const { title, description, smallHeader } = Astro.props;
+const fullTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME
 ---
 <html lang="en">
     <head>
-        <BaseHead title={title}/>
+        <BaseHead title={fullTitle}/>
+        <Seo title={fullTitle} description={description}/>
         <script src="https://p.trellocdn.com/embed.min.js"></script>
     </head>
     <body>
