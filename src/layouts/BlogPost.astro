@@ -1,5 +1,6 @@
 ---
 import BasePage from "./BasePage.astro"
+import Bio from "../components/Bio.astro"
 
 const { content } = Astro.props;
 const formattedDate = Intl.DateTimeFormat('en-US', {
@@ -8,7 +9,7 @@ const formattedDate = Intl.DateTimeFormat('en-US', {
     day: 'numeric'
 }).format(new Date(content.date));
 ---
-<BasePage title={content.title} smallHeader={true}>
+<BasePage title={content.title} smallHeader={true} description={content.description}>
     <h1 class="main-title">{ content.title }</h1>
     <div class="date-tag">{formattedDate}</div>
     {content.featuredImage && (
@@ -17,6 +18,7 @@ const formattedDate = Intl.DateTimeFormat('en-US', {
     <main>
         <slot />
     </main>
+    <Bio />
     <a href="/">← Back to Blog Posts</a>
     <br />
     <br />
