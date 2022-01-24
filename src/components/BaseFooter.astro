@@ -1,0 +1,20 @@
+---
+const year = new Date().getFullYear();
+---
+<footer>
+    © {year}, Built with
+    {` `}
+    <a href="https://astro.build/">Astro</a> 🚀<br />
+    <a href="https://benbrougher.tech/rss.xml">RSS Feed</a>
+</footer>
+
+<style>
+footer {
+    font-size: var(--standardFontSize);
+    padding-bottom: 1em;
+}
+
+a {
+    color: var(--linkColor);
+}
+</style>

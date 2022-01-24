@@ -1,61 +1,24 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "benbrougher-tech",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Ben Brougher's Blog",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Ben Brougher <benbrougher@gmail.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
-  "dependencies": {
-    "gatsby": "^2.20.9",
-    "gatsby-image": "^2.3.1",
-    "gatsby-plugin-feed": "^2.4.1",
-    "gatsby-plugin-google-analytics": "^2.2.2",
-    "gatsby-plugin-manifest": "^2.3.3",
-    "gatsby-plugin-offline": "^2.2.10",
-    "gatsby-plugin-react-helmet": "^3.2.1",
-    "gatsby-plugin-sentry": "^1.0.1",
-    "gatsby-plugin-sharp": "^2.5.3",
-    "gatsby-plugin-typography": "^2.4.1",
-    "gatsby-remark-copy-linked-files": "^2.2.1",
-    "gatsby-remark-images": "^3.2.1",
-    "gatsby-remark-prismjs": "^3.4.1",
-    "gatsby-remark-responsive-iframe": "^2.3.1",
-    "gatsby-remark-smartypants": "^2.2.1",
-    "gatsby-source-filesystem": "^2.2.2",
-    "gatsby-transformer-remark": "^2.7.1",
-    "gatsby-transformer-sharp": "^2.4.3",
-    "iframe-resizer-react": "^1.0.3",
-    "prismjs": "^1.19.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-helmet": "^5.2.1",
-    "react-typography": "^0.16.19",
-    "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75",
-    "typography": "^0.16.19",
-    "typography-theme-wordpress-2016": "^0.16.19"
+    "url": "https://github.com/moutansos/benbrougher-tech/issues"
   },
   "devDependencies": {
+    "@astrojs/renderer-preact": "^0.2.2",
+    "astro": "^0.20.12",
+    "autoprefixer": "^10.4.0",
     "prettier": "^1.19.1"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "main": "n/a",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
-  },
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   }
 }

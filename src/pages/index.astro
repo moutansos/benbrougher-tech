@@ -1,0 +1,15 @@
+---
+import BasePage from "../layouts/BasePage.astro";
+import Bio from "../components/Bio.astro";
+import PostPreview from "../components/PostPreview.astro";
+
+const blogPosts = Astro.fetchContent("./posts/*.md")
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+---
+
+<BasePage title="Home" smallHeader={false} description={null}>
+    <Bio />
+    {blogPosts.map((post) => {
+        return <PostPreview post={post} />
+    })}
+</BasePage>

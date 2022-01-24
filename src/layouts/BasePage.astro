@@ -1,0 +1,78 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import BaseFooter from "../components/BaseFooter.astro";
+import Navigation from "../components/Navigation.astro";
+import BaseHeader from "../components/BaseHeader.astro";
+import Seo from "../components/Seo.astro";
+import { SITE_NAME } from "../constants.ts";
+
+export interface Props {
+    title: string | undefined;
+    description: string | undefined;
+    smallHeader: boolean;
+}
+
+const { title, description, smallHeader } = Astro.props;
+const fullTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME
+---
+<html lang="en">
+    <head>
+        <BaseHead title={fullTitle}/>
+        <Seo title={fullTitle} description={description}/>
+        <script src="https://p.trellocdn.com/embed.min.js"></script>
+    </head>
+    <body>
+        <BaseHeader smallHeader={smallHeader}/>
+        <Navigation />
+        <div class="content">
+            <slot />
+        </div>
+        <BaseFooter />
+    </body>
+</html>
+
+<style>
+body {
+    --primaryAccent: hsl(24, 100%, 50%);
+    --primaryText: #d2cec6;
+    --accentText: rgb(0, 255, 0);
+    --primaryBackground: rgb(33, 33, 33);
+    --linkColor: hsl(204, 100%, 40%);
+    --standardFontSize: 1.21rem;
+
+    color: var(--primaryText);
+    background-color: var(--primaryBackground);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2em 1em 1em 1em;
+    max-width: 51em;
+}
+
+.content :global(h1) {
+    margin-top: 1em;
+    font-family: Montserrat, sans-serif;
+    font-size: 2.5em;
+}
+
+.content :global(p) {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    margin-bottom: 1.75rem;
+
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+
+    font-family: 'Merriweather','Georgia',serif;
+    font-weight: 400;
+    font-size: 1.15em;
+    line-height: 1.4em;
+}
+</style>

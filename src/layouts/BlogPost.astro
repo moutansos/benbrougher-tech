@@ -1,0 +1,92 @@
+---
+import BasePage from "./BasePage.astro"
+import Bio from "../components/Bio.astro"
+
+const { content } = Astro.props;
+const formattedDate = Intl.DateTimeFormat('en-US', {
+    month: 'long',
+    year: 'numeric',
+    day: 'numeric'
+}).format(new Date(content.date));
+---
+<BasePage title={content.title} smallHeader={true} description={content.description}>
+    <h1 class="main-title">{ content.title }</h1>
+    <div class="date-tag">{formattedDate}</div>
+    {content.featuredImage && (
+        <img src={content.featuredImage} />
+    )}
+    <main>
+        <slot />
+    </main>
+    <Bio />
+    <a href="/">← Back to Blog Posts</a>
+    <br />
+    <br />
+</BasePage>
+
+<style>
+h1 {
+    margin-top: 1em;
+    font-family: Montserrat, sans-serif;
+    font-size: 2.5em;
+}
+
+.main-title {
+    margin-bottom: 0;
+}
+
+.date-tag {
+    margin-top: 0;
+    margin-bottom: 2em;
+    font-family: 'Merriweather', 'Georgia', serif;
+    font-size: 0.9em;
+}
+
+img {
+    max-width: 100%;
+}
+
+main {
+    padding-bottom: 5em;
+}
+
+main :global(img) {
+    max-width: 100%;
+}
+
+main :global(h1) {
+    margin-top: 1em;
+    font-family: Montserrat, sans-serif;
+    font-size: 2.5em;
+}
+
+main :global(h2) {
+    margin-top: 1.75em;
+    font-family: 'Merriweather','Georgia',serif;
+    font-size: 2em;
+}
+
+main :global(h3) {
+    font-family: 'Merriweather','Georgia',serif;
+    font-size: 1.5em;
+}
+
+main :global(blockquote) {
+    border-left: 0.25em solid grey;
+    margin-left: -1.5em;
+    padding: 0em 1em 0em 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 1.4em;
+    font-style: italic;
+}
+
+main :global(a) {
+    color: var(--linkColor);
+}
+
+a {
+    font-size: 1.25em;
+    color: var(--linkColor);
+}
+</style>
