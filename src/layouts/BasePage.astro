@@ -20,6 +20,15 @@ const fullTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME
         <BaseHead title={fullTitle}/>
         <Seo title={fullTitle} description={description}/>
         <script src="https://p.trellocdn.com/embed.min.js"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-HFJVTXQVHW"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-HFJVTXQVHW');
+        </script>
     </head>
     <body>
         <BaseHeader smallHeader={smallHeader}/>
