@@ -1,0 +1,72 @@
+---
+    import BasePage from "../layouts/BasePage.astro"
+---
+
+<BasePage title="Uses" smallHeader={false} description="The tech I use on a day to day basis">
+    <h1>Uses</h1>
+    <div class="subtitle">The tech I use day in and day out</div>
+    <p>
+        Inspired by Wes Bos and his <a href="https://uses.tech" target="_blank" rel="noopener noreferrer">uses.tech</a>
+        project. It's all the tech and software I use at work and play.
+    </p>
+    <h2>Hardware</h2>
+    <ul>
+        <li>For my personal laptop, I use a Dell Latitude E5570. It's loaded up with a 1TB SSD and 16GB of RAM.</li>
+        <li>My work laptop is a Dell Presision 5530 with a 512 GB SSD, and 32 GB of RAM.</li>
+        <li>
+            My desktop is a custom PC in a Corsair Carbide case, with an AMD Ryzen 9 3950x, an RTX 2080 Ti,
+            32 GB of RAM and a 1 TB SSD. I also threw an old Gigabyte GTX 1060 in there to accelerate
+            video editing and for machine learning workloads.
+        </li>
+        <li>My phone is a Pixel 4 XL, usually running the latest beta version of Android.</li>
+        <li>
+            I have an old server as well that I use to host some VMs and experiment. It's a Dell PowerEdge R710, loaded
+            up with 10 TB of SAS drives and 48 GB of RAM.
+        </li>
+    </ul>
+    <h2>Software</h2>
+    <ul>
+
+        <li>
+            For operatings systems, I use Windows 11 on my desktop and I use Ubuntu 22.04 on my laptop. On my
+            servers I tend to run the latest LTS edition of Ubuntu Server.
+        </li>
+        <li>
+            I run a Kubernetes cluster, specifically the microk8s distribution on some VMs and old laptops for 
+            testing and tinkering.
+        </li>
+        <li>
+            My programming languages of choice are TypeScript for frontend and C#/.NET Core for backend.
+            I also know JavaScirpt, Golang and PowerShell and have some experience with Java, Python,
+            Bash, and C/C++.
+        </li>
+        <li>
+            As far as frontend frameworks go, my favorite is Svelte, but I also do a lot of work in
+            Vue 3. I've played around with React and Angular but just haven't gravitated twoards them.
+        </li>
+        <li>
+            My main IDE for web development and most anything else is VS Code. My IDE for C#/.NET Core
+            is Visual Studio 2022.
+        </li>
+        <li>To manage my music and shows, I use Plex.</li>
+        <li>I run a Home Assistant instance on my server to manage my smart home things.</li>
+        <li>For keeping all my files in sync and backed up, I use Resilo Sync.</li>
+    </ul>
+    <h2>Desk Setup</h2>
+    <ul>
+        <li>My desk is a cheap 47" Tresanti standing desk from Costco.</li>
+        <li>For a chair I use a Autonomus MayoChair.</li>
+        <li>My keyboard is a Logitech G512 Carbon with GX Brown switches.</li>
+        <li>I use a Logitech G502 Hero Mouse.</li>
+        <li>For Headphones I use a pair of Audio Technica M50x's.</li>
+    </ul>
+</BasePage>
+
+<style>
+    .subtitle {
+        margin-top: -0.5em;
+        margin-bottom: 1em;
+        font-family: 'Merriweather', 'Georgia', serif;
+        font-size: 2em;
+    }
+</style>
