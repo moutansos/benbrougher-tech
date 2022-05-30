@@ -8,9 +8,12 @@
     "url": "https://github.com/moutansos/benbrougher-tech/issues"
   },
   "devDependencies": {
+    "@astrojs/preact": "^0.1.2",
+    "@astrojs/react": "^0.1.2",
     "@astrojs/renderer-preact": "^0.2.2",
-    "astro": "^0.20.12",
+    "astro": "^1.0.0-beta.36",
     "autoprefixer": "^10.4.0",
+    "preact": "^10.7.2",
     "prettier": "^1.19.1"
   },
   "license": "MIT",

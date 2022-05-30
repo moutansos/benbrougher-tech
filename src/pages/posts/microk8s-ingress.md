@@ -57,7 +57,7 @@ You can read more about the Ingress Controller addon [here](https://microk8s.io/
 
 Next, we will deploy a few services to provide something to reply to requests on our endpoints.
 
-```yml
+```yaml
 # service-1.yml
 apiVersion: apps/v1
 kind: Deployment
@@ -104,7 +104,7 @@ spec:
   type: ClusterIP
 ```
 
-```yml
+```yaml
 # service-2.yml
 apiVersion: apps/v1
 kind: Deployment
@@ -151,7 +151,7 @@ spec:
   type: ClusterIP
 ```
 
-```yml
+```yaml
 # service-3.yml
 apiVersion: apps/v1
 kind: Deployment
@@ -210,7 +210,7 @@ microk8s kubectl apply -f service-3.yml
 
 The next step is to add the record for the ingress to point to our three services. We will place one service on its own hostname, and the other two services will share subroutes on a hostname. Here's the config to apply:
 
-```yml
+```yaml
 # ingress.yml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
