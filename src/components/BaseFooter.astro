@@ -5,10 +5,22 @@ const year = new Date().getFullYear();
     © {year}, Built with
     {` `}
     <a href="https://astro.build/">Astro</a> 🚀<br />
-    <a href="https://benbrougher.tech/rss.xml">RSS Feed</a>
+    <div class="link-container">
+        <a href="https://benbrougher.tech/rss.xml">RSS Feed</a>
+        <a href="http://status.benbrougher.tech">Status Page</a>
+    </div>
 </footer>
 
 <style>
+.link-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.link-container a {
+    padding: 0.5em;
+}
+
 footer {
     font-size: var(--standardFontSize);
     padding-bottom: 1em;
