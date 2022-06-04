@@ -1,6 +1,6 @@
 ---
 title: 'How to Use a Vue.js Event Bus'
-date: '2020-03-31T22:12:03.284Z'
+pubDate: '2020-03-31T22:12:03.284Z'
 description: 'What are event busses in Vue.js and how do we go about using them?'
 featuredImage: '/content/blog/vue-event-bus-tutorial/front-image-optomized.jpg'
 layout: '../../layouts/BlogPost.astro'

@@ -1,6 +1,6 @@
 ---
 title: 'Kubernetes Ingress with microk8s, MetalLB, and the NGINX Ingress Controller'
-date: '2022-04-14T21:46:02.384Z'
+pubDate: '2022-04-14T21:46:02.384Z'
 description: 'How to use microk8s to create an ingress using MetalLB and the NGINX ingress controller'
 featuredImage: '/content/blog/microk8s-ingress/front-door.jpg'
 layout: '../../layouts/BlogPost.astro'

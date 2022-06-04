@@ -1,6 +1,6 @@
 ---
 title: Getting Started With API Development in Flask
-date: "2019-09-13T22:12:03.284Z"
+pubDate: "2019-09-13T22:12:03.284Z"
 description: "A Guide to Starting an API With Flask and Python"
 layout: '../../layouts/BlogPost.astro'
 ---

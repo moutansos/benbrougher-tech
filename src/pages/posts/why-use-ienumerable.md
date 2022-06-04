@@ -1,6 +1,6 @@
 ---
 title: Why Use IEnumerable?
-date: '2019-09-22T22:12:03.284Z'
+pubDate: '2019-09-22T22:12:03.284Z'
 description: 'What is IEnumerable in C#? And why should I use it?'
 layout: '../../layouts/BlogPost.astro'
 ---

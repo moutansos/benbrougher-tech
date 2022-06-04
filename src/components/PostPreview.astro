@@ -1,6 +1,6 @@
 ---
 const { post } = Astro.props;
-const formattedDate = new Date(post.frontmatter.date).toLocaleDateString("en-US", {
+const formattedDate = new Date(post.frontmatter.pubDate).toLocaleDateString("en-US", {
     month: 'long',
     year: 'numeric',
     day: 'numeric'

@@ -7,7 +7,7 @@ const formattedDate = Intl.DateTimeFormat('en-US', {
     month: 'long',
     year: 'numeric',
     day: 'numeric'
-}).format(new Date(content.date));
+}).format(new Date(content.pubDate));
 ---
 <BasePage title={content.title} smallHeader={true} description={content.description}>
     <h1 class="main-title">{ content.title }</h1>
