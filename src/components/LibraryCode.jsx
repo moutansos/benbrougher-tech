@@ -15,7 +15,7 @@ class LibraryCode extends React.Component {
 
   render() {
     return <div ref={this.articlesBoardRef}>
-        <a href='https://trello.com/b/qo1G8apM'>Link to Library</a>
+        {/* <a href='https://trello.com/b/qo1G8apM'>Link to Library</a> */}
     </div>;
   }
 }

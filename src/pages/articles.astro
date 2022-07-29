@@ -1,6 +1,16 @@
 ---
-    import BasePage from "../layouts/BasePage.astro";
-    import LibraryCode from "../components/LibraryCode.jsx";
+import BasePage from "../layouts/BasePage.astro";
+import LibraryCode from "../components/LibraryCode.jsx";
+import { Article } from "../models/Article";
+import ArticleIndex from "../components/ArticleIndex.svelte";
+
+const test: Article[] = [
+    {
+        id: "test-1",
+        name: "Test Article",
+        column: "Test Column 1"
+    } as Article
+]
 ---
 
 <BasePage title="Article Library" smallHeader={false} description={null}>
@@ -10,6 +20,7 @@
         From things like technical deep dives of compiler architecture to project management strategies. If I feel that
         it could be useful it's here.
     </p>
-    <LibraryCode />
+    <LibraryCode client:only="preact" />
     <br />
+    <!-- <ArticleIndex articles={test} /> -->
 </BasePage>
