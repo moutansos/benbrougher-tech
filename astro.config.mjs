@@ -5,10 +5,8 @@
 // helpful tooltips, and warnings if your exported object is invalid.
 // You can disable this by removing "@ts-check" and `@type` comments below.
 import preact from '@astrojs/preact';
-import svelte from '@astrojs/svelte';
-import { defineConfig } from 'astro/config';
-
 import svelte from "@astrojs/svelte";
+import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
