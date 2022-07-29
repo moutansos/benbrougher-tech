@@ -4,7 +4,7 @@ import Bio from "../components/Bio.astro";
 import PostPreview from "../components/PostPreview.astro";
 
 const blogPosts = (await Astro.glob("./posts/*.md"))
-    .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
+    .sort((a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime());
 ---
 
 <BasePage title="Home" smallHeader={false} description={null}>
