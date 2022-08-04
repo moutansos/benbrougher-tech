@@ -4,15 +4,24 @@
 </script>
 
 <div>
-    <br />
-    {#each projects as project}
-      <article>
-        <a href={project.url}>
+  <br />
+  {#each projects as project}
+    <article>
+      <a href={project.url} target="_blank">
+        <img
+          class="website-thumbnail"
+          alt="screenhsot of charcode website"
+          src="/content/assets/project-screenshots/{project.image}"
+        />
+      </a>
+      <content>
+        <a href={project.url} target="_blank">
           <h3>{project.name}</h3>
         </a>
         <p class="description">{project.description}</p>
-      </article>
-    {/each}
+      </content>
+    </article>
+  {/each}
 </div>
 
 <style>
@@ -35,13 +44,17 @@
 
   article {
     margin-bottom: 4em;
-  }
-
-  .formatted-date {
-    font-size: 0.9em;
+    display: flex;
+    flex-direction: row;
   }
 
   .description {
     font-size: var(--standardFontSize);
+  }
+
+  .website-thumbnail {
+    width: 12em;
+    border-radius: 0.75em;
+    margin: 1em;
   }
 </style>
