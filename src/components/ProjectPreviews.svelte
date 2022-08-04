@@ -1,0 +1,47 @@
+<script lang="ts">
+  import { Project } from '../models/Project';
+  export let projects: Project[] = [];
+</script>
+
+<div>
+    <br />
+    {#each projects as project}
+      <article>
+        <a href={project.url}>
+          <h3>{project.name}</h3>
+        </a>
+        <p class="description">{project.description}</p>
+      </article>
+    {/each}
+</div>
+
+<style>
+  a {
+    text-decoration: none;
+    color: var(--linkColor);
+  }
+
+  h3 {
+    margin-bottom: 0.5em;
+    font-family: 'Merriweather', 'Georgia', serif;
+    font-size: 1.5rem;
+  }
+
+  p {
+    padding-top: 0em;
+    margin-top: 0.25em;
+    margin-bottom: 0em;
+  }
+
+  article {
+    margin-bottom: 4em;
+  }
+
+  .formatted-date {
+    font-size: 0.9em;
+  }
+
+  .description {
+    font-size: var(--standardFontSize);
+  }
+</style>

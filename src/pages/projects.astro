@@ -1,0 +1,21 @@
+---
+import ProjectPreviews from "../components/ProjectPreviews.svelte";
+import BasePage from "../layouts/BasePage.astro";
+import { Project } from "../models/Project";
+const DESCRIPTION = "All the projects that I've built";
+const TITLE = "Projects";
+
+const projects: Project[] = [
+    {
+        name: "charcode.info",
+        description: "A tool to find the hex and integer values of a string of text. Usefull for finding things like non-printing spaces in a string.",
+        url: "https://charcode.info"
+    }
+];
+---
+
+<BasePage title={TITLE} smallHeader={false} description={DESCRIPTION}>
+    <h1>{TITLE}</h1>
+    <div class="subtitle">{DESCRIPTION}</div>
+    <ProjectPreviews projects={projects} />
+</BasePage>
