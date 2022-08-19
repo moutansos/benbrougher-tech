@@ -1,6 +1,6 @@
 ---
 title: 'Creating a .NET Cron Job for Kubernetes'
-pubDate: '2022-08-18T22:23:02.384Z'
+pubDate: '2022-07-29T15:29:02.384Z'
 description: 'How to create a .NET 6 Cron Job with C# running in a Kubernetes Cluster'
 featuredImage: '/content/blog/kubernetes-cron-job/clock-inner-gears.jpg'
 layout: '../../layouts/BlogPost.astro'
