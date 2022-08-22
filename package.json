@@ -12,9 +12,9 @@
     "@astrojs/react": "^1.0.0",
     "@astrojs/renderer-preact": "^0.5.0",
     "@astrojs/svelte": "^1.0.0",
-    "astro": "^1.0.4",
+    "astro": "^1.0.6",
     "autoprefixer": "^10.4.8",
-    "preact": "^10.10.2",
+    "preact": "^10.10.6",
     "prettier": "^2.7.1",
     "svelte": "^3.49.0"
   },
