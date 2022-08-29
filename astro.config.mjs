@@ -8,8 +8,10 @@ import preact from '@astrojs/preact';
 import svelte from "@astrojs/svelte";
 import { defineConfig } from 'astro/config';
 
+import image from "@astrojs/image";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [preact(), svelte()],
+  integrations: [preact(), svelte(), image()],
   site: "https://benbrougher.tech"
 });

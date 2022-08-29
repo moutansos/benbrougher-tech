@@ -10,7 +10,7 @@
       <a href={project.url} target="_blank">
         <img
           class="website-thumbnail"
-          alt="screenhsot of charcode website"
+          alt="screenhsot of project website"
           src="/content/assets/project-screenshots/{project.image}"
         />
       </a>
