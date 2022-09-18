@@ -28,6 +28,7 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/rss": "^1.0.0"
+    "@astrojs/rss": "^1.0.0",
+    "@giscus/svelte": "^2.2.0"
   }
 }
