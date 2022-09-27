@@ -1,7 +1,7 @@
 ---
 import BasePage from "./BasePage.astro"
 import Bio from "../components/Bio.astro"
-import Comments from "../components/Comments.astro"
+import Comments from "../components/Comments.svelte"
 
 const { content } = Astro.props;
 const formattedDate = Intl.DateTimeFormat('en-US', {
@@ -23,7 +23,7 @@ const formattedDate = Intl.DateTimeFormat('en-US', {
     <a href="/">← Back to Blog Posts</a>
     <br />
     <br />
-    <Comments />
+    <Comments client:only />
 </BasePage>
 
 <style>

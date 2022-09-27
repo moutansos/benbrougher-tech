@@ -7,7 +7,7 @@ import Giscus from "@giscus/svelte";
     repoId="MDEwOlJlcG9zaXRvcnkyMDcwNDQ2ODY"
     category="Comments"
     categoryId="DIC_kwDODFdATs4CRfjk"
-    mapping="og:title"
+    mapping="title"
     reactionsEnabled="1"
     emitMetadata="0"
     inputPosition="top"
