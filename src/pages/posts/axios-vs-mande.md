@@ -7,7 +7,7 @@ layout: '../../layouts/BlogPost.astro'
 
 For web projects, I've been using Axios for quite some time. It's been my go-to library for making HTTP requests, but I started hearing about another library called mande recently. It seems to be gaining some traction and some people seem to be pretty happy with it. I wanted to take the opportunity in this post to do a deep dive into what each of these libraries does and explore the idea that maybe you don't need to use them at all.
 
-# What is Axios?
+## What is Axios?
 
 [Axios](https://axios-http.com/) is a library that has the goal of being isomorphic regarding the browser and Node environments. This means that no matter if you're in the browser or on the server side in a Node environment, you can use the same interface to interact with remote HTTP endpoints. This reduces mental overhead for making requests but is also very useful when writing a library that needs to make requests on both the server and client in the same way. This is all great, but as of earlier this year, the fetch function landed in NodeJS, meaning the same interface can be used on both the client and server. So unless you are using an older version of Node that doesn't support fetch, the main use case for Axios seems to have been rendered irrelevant.
 
@@ -17,7 +17,7 @@ Along the same lines as the default hooks into the request and response pipeline
 
 Axios also provides good ways to validate status codes, cancel in-flight requests, and provide definitions for TypeScript out of the box as well.
 
-## What does it look like to use Axios?
+### What does it look like to use Axios?
 
 Basic Axios usage for a GET call is pretty simple:
 
@@ -49,7 +49,7 @@ try {
 }
 ```
 
-# What is mande?
+## What is mande?
 
 On the other hand, [mande](https://github.com/posva/mande) is not meant to be an isomorphic library. It is a simple wrapper around the `fetch` function. It checks to see that the status code is in an acceptable range, and provides a simple resource-based interface for you to interact with.
 
@@ -57,7 +57,7 @@ Like Axios it also provides some ways to define default values for resources. Th
 
 The other claim to fame of mande is it's small. As a library, its size is less than 800 bytes.
 
-## What does it look like to use mande?
+### What does it look like to use mande?
 
 Basic usage of mande is also pretty simple:
 
@@ -87,14 +87,14 @@ try {
 }
 ```
 
-# Which one is better?
+## Which one is better?
 
 So, which is it? Which one is better to use? I think the answer to that question is the proverbial "it depends." If you're on a current version of Node, and you're using true REST API that's based on resources and not just making RPC calls with HTTP, then mande might be the library for you. But if you have any sort of issue with using a library with a smaller community for core functionality, then you might go with Axios. And if the advanced features Axios provides would make your app simpler and reduce boiler-plate code, then it would probably be the better option. But what if you didn't want all that? What if you wanted a simple option that's built into all modern platforms already?
 
-# Wait, what about fetch?
+## Wait, what about fetch?
 
 The `fetch` function is that option. It's now part of every modern browser, and it's part of NodeJS and deno and it works the same everywhere. It supports async/await like the two above, but it requires a bit more boilerplate code around it to do things like add in headers, handle errors, etc. It also doesn't have anything like Axios' Interceptors. All that said, for most things, fetch is probably just fine.
 
-# Conclusion
+## Conclusion
 
 So in short, all three have their strengths, and all three are viable options for most projects. I think moving forward, I'm going to use `fetch` for simple things, and then use Axios for larger apps with more complex data layers. The features provided by creating instances that have defaults are pretty useful in practice. That said, I look forward to seeing what mande brings to the table in the future. Will it stay a tiny library to wrap fetch? Or will it grow and add more features to rival Axios? Time will tell, but as of right now, it's a solid wrapper library in the middle ground complexity-wise between fetch and Axios.
