@@ -12,6 +12,7 @@
     "@astrojs/preact": "^2.0.0",
     "@astrojs/react": "^2.0.1",
     "@astrojs/renderer-preact": "^0.5.0",
+    "@astrojs/rss": "^2.1.0",
     "@astrojs/svelte": "^2.0.0",
     "astro": "^2.0.2",
     "autoprefixer": "^10.4.13",
@@ -29,7 +30,6 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/rss": "^1.0.3",
     "@giscus/svelte": "^2.2.0"
   },
   "type": "module"

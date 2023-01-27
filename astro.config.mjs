@@ -13,5 +13,5 @@ import image from "@astrojs/image";
 // https://astro.build/config
 export default defineConfig({
   integrations: [preact(), svelte(), image()],
-  site: "https://benbrougher.tech"
+  site: "https://benbrougher.tech/"
 });

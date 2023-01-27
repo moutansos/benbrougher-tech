@@ -7,7 +7,7 @@
   <br />
   {#each projects as project}
     <article>
-      <a href={project.url} target="_blank">
+      <a href={project.url} target="_blank" rel="noreferrer">
         <img
           class="website-thumbnail"
           alt="screenhsot of project website"
@@ -15,7 +15,7 @@
         />
       </a>
       <content>
-        <a href={project.url} target="_blank">
+        <a href={project.url} target="_blank" rel="noreferrer">
           <h3>{project.name}</h3>
         </a>
         <p class="description">{project.description}</p>
