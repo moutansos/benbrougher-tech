@@ -8,18 +8,18 @@
     "url": "https://github.com/moutansos/benbrougher-tech/issues"
   },
   "devDependencies": {
-    "@astrojs/image": "^0.13.0",
-    "@astrojs/preact": "^2.0.2",
-    "@astrojs/react": "^2.0.1",
+    "@astrojs/image": "^0.15.0",
+    "@astrojs/preact": "^2.0.3",
+    "@astrojs/react": "^2.0.2",
     "@astrojs/renderer-preact": "^0.5.0",
-    "@astrojs/rss": "^2.1.0",
-    "@astrojs/svelte": "^2.0.0",
-    "astro": "^2.0.2",
+    "@astrojs/rss": "^2.1.1",
+    "@astrojs/svelte": "^2.0.2",
+    "astro": "^2.0.14",
     "autoprefixer": "^10.4.13",
-    "preact": "^10.11.2",
-    "prettier": "^2.7.1",
+    "preact": "^10.12.1",
+    "prettier": "^2.8.4",
     "react": "^18.2.0",
-    "svelte": "^3.52.0"
+    "svelte": "^3.55.1"
   },
   "license": "MIT",
   "main": "n/a",
@@ -30,7 +30,7 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@giscus/svelte": "^2.2.0"
+    "@giscus/svelte": "^2.2.6"
   },
   "type": "module"
 }
