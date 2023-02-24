@@ -1,80 +1,99 @@
 ---
-import BasePage from "./BasePage.astro"
-import Bio from "../components/Bio.astro"
-import Comments from "../components/Comments.svelte"
+import BasePage from './BasePage.astro';
+import Bio from '../components/Bio.astro';
+import Comments from '../components/Comments.svelte';
 
 const { content } = Astro.props;
-const formattedDate = Intl.DateTimeFormat('en-US', {
+const formattedDate = formatDate(content.pubDate);
+const formattedUpdatedDate = content.updated
+  ? formatDate(content.updated)
+  : content.updated;
+
+function formatDate(date) {
+  return Intl.DateTimeFormat('en-US', {
     month: 'long',
     year: 'numeric',
-    day: 'numeric'
-}).format(new Date(content.pubDate));
+    day: 'numeric',
+  }).format(new Date(date));
+}
 ---
-<BasePage title={content.title} smallHeader={true} description={content.description}>
-    <h1 class="main-title">{ content.title }</h1>
-    <div class="date-tag">{formattedDate}</div>
-    {content.featuredImage && (
-        <img src={content.featuredImage} />
-    )}
-    <main>
-        <slot />
-    </main>
-    <a href="https://www.buymeacoffee.com/benbroughertech" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-    <Bio />
-    <a href="/">← Back to Blog Posts</a>
-    <br />
-    <br />
-    <Comments client:only />
+
+<BasePage
+  title={content.title}
+  smallHeader={true}
+  description={content.description}
+>
+  <h1 class="main-title">{content.title}</h1>
+  <div class="date-tag">
+    {formattedDate}
+    {content.updated && <span class="date-tag"> (Updated: {formattedUpdatedDate})</span>}
+  </div>
+  {content.featuredImage && <img src={content.featuredImage} />}
+  <main>
+    <slot />
+  </main>
+  <a href="https://www.buymeacoffee.com/benbroughertech" target="_blank"
+    ><img
+      src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+      alt="Buy Me A Coffee"
+      style="height: 60px !important;width: 217px !important;"
+    /></a
+  >
+  <Bio />
+  <a href="/">← Back to Blog Posts</a>
+  <br />
+  <br />
+  <Comments client:only />
 </BasePage>
 
 <style>
-h1 {
+  h1 {
     margin-top: 1em;
     font-family: Montserrat, sans-serif;
     font-size: 2.5em;
-}
+  }
 
-.main-title {
+  .main-title {
     margin-bottom: 0;
-}
+  }
 
-.date-tag {
+  .date-tag {
     margin-top: 0;
     margin-bottom: 2em;
     font-family: 'Merriweather', 'Georgia', serif;
     font-size: 0.9em;
-}
+  }
 
-img {
+  img {
     max-width: 100%;
-}
+  }
 
-main {
+  main {
     padding-bottom: 5em;
-}
+  }
 
-main :global(img) {
+  main :global(img) {
     max-width: 100%;
-}
+  }
 
-main :global(h1) {
+  main :global(h1) {
     margin-top: 1em;
     font-family: Montserrat, sans-serif;
     font-size: 2.5em;
-}
+  }
 
-main :global(h2) {
+  main :global(h2) {
     margin-top: 1.75em;
-    font-family: 'Merriweather','Georgia',serif;
+    font-family: 'Merriweather', 'Georgia', serif;
     font-size: 2em;
-}
+  }
 
-main :global(h3) {
-    font-family: 'Merriweather','Georgia',serif;
+  main :global(h3) {
+    font-family: 'Merriweather', 'Georgia', serif;
     font-size: 1.5em;
-}
+  }
 
-main :global(blockquote) {
+  main :global(blockquote) {
     border-left: 0.25em solid grey;
     margin-left: -1.5em;
     padding: 0em 1em 0em 1em;
@@ -82,14 +101,14 @@ main :global(blockquote) {
     margin-bottom: 1em;
     font-size: 1.4em;
     font-style: italic;
-}
+  }
 
-main :global(a) {
+  main :global(a) {
     color: var(--linkColor);
-}
+  }
 
-a {
+  a {
     font-size: 1.25em;
     color: var(--linkColor);
-}
+  }
 </style>

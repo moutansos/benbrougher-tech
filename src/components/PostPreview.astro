@@ -1,16 +1,26 @@
 ---
 const { post } = Astro.props;
-const formattedDate = new Date(post.frontmatter.pubDate).toLocaleDateString("en-US", {
+const formattedDate = formatDate(new Date(post.frontmatter.pubDate));
+const formattedUpdatedDate = post.frontmatter.updated
+  ? formatDate(new Date(post.frontmatter.updated))
+  : post.frontmatter.updated;
+
+function formatDate(date) {
+  return Intl.DateTimeFormat('en-US', {
     month: 'long',
     year: 'numeric',
-    day: 'numeric'
-});
+    day: 'numeric',
+  }).format(new Date(date));
+}
 ---
 <article>
     <a href={post.url}>
         <h3>{post.frontmatter.title}</h3>
     </a>
-    <p class="formatted-date">{formattedDate}</p>
+    <p class="formatted-date">
+        {formattedDate}
+        {formattedUpdatedDate && <span class="formatted-date"> (Updated: {formattedUpdatedDate})</span>}
+    </p>
     <p class="description">{post.frontmatter.description}</p>
 </article>
 
