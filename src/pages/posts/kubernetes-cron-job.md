@@ -1,12 +1,12 @@
 ---
 title: 'Creating a .NET Cron Job for Kubernetes'
 pubDate: '2022-07-29T15:29:02.384Z'
-description: 'How to create a .NET 6 Cron Job with C# running in a Kubernetes Cluster'
+description: 'How to create a .NET 7 Cron Job with C# running in a Kubernetes Cluster'
 featuredImage: '/content/blog/kubernetes-cron-job/clock-inner-gears.jpg'
 layout: '../../layouts/BlogPost.astro'
 ---
 
-Oftentimes, we need to run tasks on a schedule, and often these tasks are long-running, but we don't want to leave an application running all the time to work on a schedule. Often in Linux, sysadmins configure crontabs to achieve this, running a program on a specified schedule. Kubernetes also has this construct, allowing containers to be run on a schedule as pods in the background, on any host in the cluster. In this post, I'll walk you through how to create a background task with C# and .NET 6 in Kubernetes.
+Oftentimes, we need to run tasks on a schedule, and often these tasks are long-running, but we don't want to leave an application running all the time to work on a schedule. Often in Linux, sysadmins configure crontabs to achieve this, running a program on a specified schedule. Kubernetes also has this construct, allowing containers to be run on a schedule as pods in the background, on any host in the cluster. In this post, I'll walk you through how to create a background task with C# and .NET 7 in Kubernetes.
 
 ## Prerequisites
 
@@ -44,8 +44,8 @@ Hello, World!
 
 Install the nuget dependencies:
 ``` bash
-dotnet add package Microsoft.Extensions.Hosting --version 6.0.1
-dotnet add package Microsoft.VisualStudio.Azure.Containers.Tools.Targets --version 1.16.1
+dotnet add package Microsoft.Extensions.Hosting --version 7.0.1
+dotnet add package Microsoft.VisualStudio.Azure.Containers.Tools.Targets --version 1.17.0
 ```
 
 Now open your editor of choice and change/add the following files:  
@@ -90,10 +90,10 @@ public class Worker : BackgroundService
 
 MyCronJob/Dockerfile
 ``` docker
-FROM mcr.microsoft.com/dotnet/runtime:6.0 AS base
+FROM mcr.microsoft.com/dotnet/runtime:7.0 AS base
 WORKDIR /app
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["MyCronJob/MyCronJob.csproj", "MyCronJob/"]
 RUN dotnet restore "MyCronJob/MyCronJob.csproj"
@@ -164,8 +164,8 @@ Open the Visual Studio Launcher and click "Create a new project":
 Then search for and select the Worker Service project template:  
 ![visual studio project template selection](/content/blog/kubernetes-cron-job/vs-slect-worker-service.jpg)  
 Set the project name to MyCronJob:  
-![visual studio setting project name](/content/blog/kubernetes-cron-job/vs-set-project-name.jpg) Select .NET 6 as a runtime and also enable Docker support:  
-![visual studio setting runtime and container support](/content/blog/kubernetes-cron-job/vs-select-project-settings.jpg)  
+![visual studio setting project name](/content/blog/kubernetes-cron-job/vs-set-project-name.jpg) Select .NET 7 as a runtime and also enable Docker support:  
+![visual studio setting runtime and container support](/content/blog/kubernetes-cron-job/vs-select-project-settings.png)  
 
 Make sure you comment out the lines in this file so your cron job actually exits and doesn't run in an infinite loop:  
   
