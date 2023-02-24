@@ -25,7 +25,7 @@
   "main": "n/a",
   "scripts": {
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "dev": "astro dev",
+    "dev": "astro dev --host",
     "build": "astro build",
     "preview": "astro preview"
   },
