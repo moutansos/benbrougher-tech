@@ -1,6 +1,7 @@
 ---
 title: 'Kubernetes Ingress with microk8s, MetalLB, and the NGINX Ingress Controller'
 pubDate: '2022-04-14T21:46:02.384Z'
+updated: '2023-03-09T21:51:02.384Z'
 description: 'How to use microk8s to create an ingress using MetalLB and the NGINX ingress controller'
 featuredImage: '/content/blog/microk8s-ingress/front-door.jpg'
 layout: '../../layouts/BlogPost.astro'
@@ -219,7 +220,7 @@ metadata:
   labels:
     app: nginx-ingress-microk8s
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
     nginx.ingress.kubernetes.io/use-forwarded-headers: "true"
 spec:
   rules:
@@ -233,26 +234,23 @@ spec:
             name: service1
             port:
               number: 80
-   - host: "api.myothersite.net/service2"
-     http:
-     paths:
-     - pathType: Prefix
-         path: "/"
-         backend:
-         service:
+  - host: "api.myothersite.net"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/service2/(.*)"
+        backend:
+          service:
             name: service2
             port:
-            number: 80
-   - host: "api.myothersite.net/service3"
-     http:
-     paths:
-     - pathType: Prefix
-         path: "/"
-         backend:
-         service:
+              number: 80
+      - pathType: Prefix
+        path: "/service3/(.*)"
+        backend:
+          service:
             name: service2
             port:
-            number: 80
+              number: 80
 ---
 apiVersion: v1
 kind: Service
