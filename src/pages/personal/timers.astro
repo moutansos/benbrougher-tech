@@ -1,0 +1,8 @@
+---
+import BasePage from "../../layouts/BasePage.astro";
+import Stopwatch from "../../components/personal/timers/Stopwatch.svelte";
+---
+
+<BasePage title="Timers" smallHeader={true} description={null}>
+    <Stopwatch client:only />
+</BasePage>

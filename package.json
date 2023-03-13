@@ -30,7 +30,8 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@giscus/svelte": "^2.2.6"
+    "@giscus/svelte": "^2.2.6",
+    "@js-temporal/polyfill": "^0.4.3"
   },
   "type": "module"
 }
