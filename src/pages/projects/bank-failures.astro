@@ -1,0 +1,25 @@
+---
+import BasePage from "../../layouts/BasePage.astro";
+
+const TITLE = "Bank Failure API";
+const DESCRIPTION = "An API and RSS Feed for US Bank Failures";
+---
+
+<BasePage title={TITLE} smallHeader={false} description={DESCRIPTION}>
+    <h1>{TITLE}</h1>
+    <div class="subtitle">{DESCRIPTION}</div>
+    <p>
+        This is exactly what it sounds like. It's an API that reads in
+        data from the FDIC website and outputs a list of bank failures.
+        It then can render these as an RSS Feed or as JSON. Responses are
+        cached for up to a half hour.
+        <br />
+        <br />
+        <a href="https://api.benbrougher.tech/bank-failures/fdic/rss.xml" target="blank">RSS Feed</a>
+        <br />
+        Summary: <a href="https://api.benbrougher.tech/bank-failures/summary" target="blank">https://api.benbrougher.tech/bank-failures/summary</a>
+        <br />
+        FDIC Failed Banks: <a href="https://api.benbrougher.tech/bank-failures/fdic" target="_blank">https://api.benbrougher.tech/bank-failures/fdic</a>
+        <br />
+    </p>
+</BasePage>

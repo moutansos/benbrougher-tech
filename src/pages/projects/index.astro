@@ -1,7 +1,7 @@
 ---
-import ProjectPreviews from "../components/ProjectPreviews.svelte";
-import BasePage from "../layouts/BasePage.astro";
-import { Project } from "../models/Project";
+import ProjectPreviews from "../../components/ProjectPreviews.svelte";
+import BasePage from "../../layouts/BasePage.astro";
+import { Project } from "../../models/Project";
 const DESCRIPTION = "All the projects that I've built";
 const TITLE = "Projects";
 
@@ -11,6 +11,12 @@ const projects: Project[] = [
         description: "A tool to find the hex and integer values of a string of text. Useful for finding things like non-printing spaces in a string.",
         url: "https://charcode.info",
         image: "charcode-info.png"
+    },
+    {
+        name: "Bank Failures API",
+        description: "An API and RSS Feed for US Bank Failures",
+        url: "/projects/bank-failures",
+        image: "bank-failures.jpg"
     }
 ];
 ---
