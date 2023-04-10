@@ -27,12 +27,12 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "dev": "astro dev --host",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "new-post": "pwsh -File ./scripts/New-BlogPost.ps1"
   },
   "dependencies": {
     "@giscus/svelte": "^2.2.6",
-    "@js-temporal/polyfill": "^0.4.3",
-    "pwsh": "^0.3.0"
+    "@js-temporal/polyfill": "^0.4.3"
   },
   "type": "module"
 }
