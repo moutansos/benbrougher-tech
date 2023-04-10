@@ -8,7 +8,8 @@
 		"vscode": {
 			"extensions": [
 				"1YiB.svelte-bundle",
-				"astro-build.astro-vscode"
+				"astro-build.astro-vscode",
+				"znck.grammarly"
 			]
 		}
 	}
