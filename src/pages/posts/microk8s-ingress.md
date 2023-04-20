@@ -76,7 +76,7 @@ spec:
     spec:
       containers:
         - name: service1
-          image: ghcr.io/moutansos/helocontainers:latest
+          image: ghcr.io/moutansos/hellocontainers:latest
           ports:
             - name: http
               containerPort: 80
@@ -123,7 +123,7 @@ spec:
     spec:
       containers:
         - name: service2
-          image: ghcr.io/moutansos/helocontainers:latest
+          image: ghcr.io/moutansos/hellocontainers:latest
           ports:
             - name: http
               containerPort: 80
@@ -140,7 +140,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: service3
+  name: service2
 spec:
   ports:
     - name: http
@@ -148,7 +148,7 @@ spec:
       protocol: TCP
       targetPort: 80
   selector:
-    app: service3
+    app: service2
   type: ClusterIP
 ```
 
@@ -170,7 +170,7 @@ spec:
     spec:
       containers:
         - name: service3
-          image: ghcr.io/moutansos/helocontainers:latest
+          image: ghcr.io/moutansos/hellocontainers:latest
           ports:
             - name: http
               containerPort: 80
@@ -228,7 +228,7 @@ spec:
     http:
       paths:
       - pathType: Prefix
-        path: "/"
+        path: "/(.*)"
         backend:
           service:
             name: service1
@@ -248,7 +248,7 @@ spec:
         path: "/service3/(.*)"
         backend:
           service:
-            name: service2
+            name: service3
             port:
               number: 80
 ---
