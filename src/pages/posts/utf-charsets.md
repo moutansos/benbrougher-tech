@@ -15,7 +15,7 @@ There were many different types of computers in the '80s and '90s. Many of which
 - Early Mac OS computers used the [Mac OS Roman](https://en.wikipedia.org/wiki/Mac_OS_Roman) character set
 - The TRS-80 used an [ASCII Derivative](https://en.wikipedia.org/wiki/TRS-80_character_set#:~:text=The%20TRS%2D80%20computer%20manufacturered,with%20a%20lower%2Dcase%20upgrade.)
 - DEC mainframes like the PDP-11 and VAX mainframes used the [RADIX 50](https://en.wikipedia.org/wiki/DEC_RADIX_50) character set
-- IBM z/OS on mainframes used a character set called [EBCDIC](https://www.ibm.com/docs/en/zos-basic-skills?topic=mainframe-ebcdic-character-set)
+- IBM mainframes used a character set called [EBCDIC](https://www.ibm.com/docs/en/zos-basic-skills?topic=mainframe-ebcdic-character-set)
 - IBM PC's used an ASCII derivative called ["extended ASCII"](https://en.wikipedia.org/wiki/Extended_ASCII)
 
 Believe it or not, these are only the encodings supporting English-style characters, if we pull Central European, Asian and Hebrew into the mix, things get even more complicated. All these standards were codified in the pre-internet days, so inter-compatibility wasn't as high of a priority, but slowly the world became more and more connected, leading to a need for a unifying standard. In the wake of this, one standard started to rise in popularity due to the proliferation of the IBM PC and its derivatives, and that was ASCII.
