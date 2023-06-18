@@ -1,6 +1,7 @@
 ---
 title: ASCII vs UTF-8 vs UTF-16 vs UTF-32
 pubDate: '2023-03-24T18:28:22.233Z'
+updated: '2023-06-13T00:00:00.000Z'
 description: What are all the different ASCII and UTF-x encodings and why do they matter?
 layout: '../../layouts/BlogPost.astro'
 ---
@@ -14,7 +15,7 @@ There were many different types of computers in the '80s and '90s. Many of which
 - Early Mac OS computers used the [Mac OS Roman](https://en.wikipedia.org/wiki/Mac_OS_Roman) character set
 - The TRS-80 used an [ASCII Derivative](https://en.wikipedia.org/wiki/TRS-80_character_set#:~:text=The%20TRS%2D80%20computer%20manufacturered,with%20a%20lower%2Dcase%20upgrade.)
 - DEC mainframes like the PDP-11 and VAX mainframes used the [RADIX 50](https://en.wikipedia.org/wiki/DEC_RADIX_50) character set
-- IBM z/OS on mainframes used a character set called [EBCDI](https://www.ibm.com/docs/en/zos-basic-skills?topic=mainframe-ebcdic-character-set)
+- IBM mainframes used a character set called [EBCDIC](https://www.ibm.com/docs/en/zos-basic-skills?topic=mainframe-ebcdic-character-set)
 - IBM PC's used an ASCII derivative called ["extended ASCII"](https://en.wikipedia.org/wiki/Extended_ASCII)
 
 Believe it or not, these are only the encodings supporting English-style characters, if we pull Central European, Asian and Hebrew into the mix, things get even more complicated. All these standards were codified in the pre-internet days, so inter-compatibility wasn't as high of a priority, but slowly the world became more and more connected, leading to a need for a unifying standard. In the wake of this, one standard started to rise in popularity due to the proliferation of the IBM PC and its derivatives, and that was ASCII.
@@ -25,7 +26,7 @@ ASCII stands for the American Standard Code for Information. The first edition w
   
 ### ASCII's Physical Layout
 
-Each ASCII character is 8 bits wide, or one byte. The result of this means that if each bit is either a 1 or a 0 that there are only 128 possible combinations of ASCII characters. In practice, only 95 of those characters are used. The rest are reserved for control characters, for example, patterns like `000 0100` represented "End of Transmission", `000 0110` represented "Acknowledgment", and `000 0111` represents the machine ringing a physical bell.  
+Each ASCII character is 8 bits wide, or one byte. Standard ASCII only uses 7 of those bits to encode information. The result of this means that if each bit is either a 1 or a 0 that there are only 128 possible characters. In practice, only 95 of those characters are used. The rest are reserved for control characters, for example, patterns like `000 0100` represented "End of Transmission", `000 0110` represented "Acknowledgment", and `000 0111` represents the machine ringing a physical bell.  
   
 The easiest way to conceptualize these binary characters is with decimal numbers. For example, `000 0100` can represent the number 4. If you want to learn more about converting between decimal and binary you can take a look [here](https://www.electronics-tutorials.ws/binary/bin_2.html). Looking at a table of all the ASCII characters, numbers (unintuitively) start at 48 and go through 57, and capital and lowercase letters run 65-90 and 97-122 respectively. In addition, there are a handful of symbols supported by the encoding set.
 
@@ -73,9 +74,9 @@ Physically, this is how UTF-8 characters can be laid out in memory or on disk. T
 
 ### UTF-16
 
-UTF-16 was introduced in the Unicode 2.0 standard as well. It is a variable length encoding, however, it uses two chunks of 2 bytes, instead of 4-byte chunks in UTF-8. This means that it contains much more whitespace compared to UTF-8. It's derived from the UCS-2 standard. Early on after the introduction of Unicode 1.0, operating systems like Windows and programming languages like Java tried to implement the 16-bit character set of UCS-2. This meant that the systems would have no compatibility path to UTF-8 since the smallest possible encoding was smaller than the minimum in UCS-2. This led to the need to create UTF-16 as a standard to be backward compatible with UCS-2 while still supporting the new characters being added to the Unicode standard. 
+UTF-16 was introduced in the Unicode 2.0 standard as well. It is a variable length encoding, however, it uses two chunks of 2 bytes, instead of 4 individual bytes in UTF-8. This means that it contains much more whitespace compared to UTF-8. It's derived from the UCS-2 standard. Early on after the introduction of Unicode 1.0, operating systems like Windows and programming languages like Java tried to implement the 16-bit character set of UCS-2. This meant that the systems would have no compatibility path to UTF-8 since the smallest possible encoding was smaller than the minimum in UCS-2. This led to the need to create UTF-16 as a standard to be backward compatible with UCS-2 while still supporting the new characters being added to the Unicode standard. 
   
-Today, you might run across UTF-16 when dealing with windows systems, and early versions of PowerShell. Much of the Windows API is based on the UTF-16 character set. Java and JavaScript also were early adopters of the UCS-2 standard and therefore now are UTF-16-based.
+Today, you might run across UTF-16 when dealing with Windows systems, and early versions of PowerShell. Much of the Windows API is based on the UTF-16 character set. Java and JavaScript also were early adopters of the UCS-2 standard and therefore now are UTF-16-based.
 
 The physical layout of UTF-16 usually looks like this:
 
