@@ -37,7 +37,11 @@
                     "item": {
                         "$ref": "#/$defs/todo-list-item"
                     }
-                }
+                },
+                "required": [
+                    "daysOfWeek",
+                    "item"
+                ]
             }
         },
         "monthly": {
@@ -58,7 +62,11 @@
                     "item": {
                         "$ref": "#/$defs/todo-list-item"
                     }
-                }
+                },
+                "required": [
+                    "daysOfMonth",
+                    "item"
+                ]
             }
         },
         "yearly": {
@@ -95,9 +103,20 @@
                         "$ref": "#/$defs/todo-list-item"
                     }
                 }
-            }
+            },
+            "required": [
+                "dayOfMonth",
+                "month",
+                "item"
+            ]
         }
     },
+    "required": [
+        "daily",
+        "weekly",
+        "monthly",
+        "yearly"
+    ],
     "$defs": {
         "todo-list-item": {
             "type": "object",
@@ -123,7 +142,11 @@
                         "description": "A label"
                     }
                 }
-            }
+            },
+            "required": [
+                "title",
+                "labels"
+            ]
         }
     }
 }
