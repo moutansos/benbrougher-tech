@@ -1,0 +1,129 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://benbrougher.tech/schemas/todo-list-recurring-items-v1.json",
+    "title": "Todo List Recurring Items",
+    "description": "A set of todo list items that recur on a regular basis",
+    "type": "object",
+    "properties": {
+        "daily": {
+            "description": "A list of items that recur daily",
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/todo-list-item"
+            }
+        },
+        "weekly": {
+            "description": "A list of items that recur weekly",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "daysOfWeek": {
+                        "type": "array",
+                        "description": "The days of the week that the item should recur on",
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "Sunday",
+                                "Monday",
+                                "Tuesday",
+                                "Wednesday",
+                                "Thursday",
+                                "Friday",
+                                "Saturday"
+                            ]
+                        }
+                    },
+                    "item": {
+                        "$ref": "#/$defs/todo-list-item"
+                    }
+                }
+            }
+        },
+        "monthly": {
+            "description": "A list of items that recur monthly",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "daysOfMonth": {
+                        "type": "array",
+                        "description": "The days of the month that the item should recur on",
+                        "items": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 31
+                        }
+                    },
+                    "item": {
+                        "$ref": "#/$defs/todo-list-item"
+                    }
+                }
+            }
+        },
+        "yearly": {
+            "description": "A list of items that recur yearly",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "dayOfMonth": {
+                        "description": "The days of the month that the item should recur on",
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 31
+                    },
+                    "month": {
+                        "description": "The months of the year that the item should recur on",
+                        "type": "string",
+                        "enum": [
+                            "January",
+                            "February",
+                            "March",
+                            "April",
+                            "May",
+                            "June",
+                            "July",
+                            "August",
+                            "September",
+                            "October",
+                            "November",
+                            "December"
+                        ]
+                    },
+                    "item": {
+                        "$ref": "#/$defs/todo-list-item"
+                    }
+                }
+            }
+        }
+    },
+    "$defs": {
+        "todo-list-item": {
+            "type": "object",
+            "description": "A todo list item",
+            "properties": {
+                "title": {
+                    "description": "The title of the todo list item",
+                    "type": "string"
+                },
+                "checkListItems": {
+                    "description": "A list of items that need to be checked off",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "A check list item"
+                    }
+                },
+                "labels": {
+                    "description": "A list of labels to apply to the todo list item",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "A label"
+                    }
+                }
+            }
+        }
+    }
+}
