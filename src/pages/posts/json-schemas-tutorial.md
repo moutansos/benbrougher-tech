@@ -1,6 +1,6 @@
 ---
 title: How to write a JSON Schema
-pubDate: '2023-12-14T12:40:22.233Z'
+pubDate: '2023-12-15T12:40:22.233Z'
 description: How to write a JSON Schema and where they can be used
 layout: '../../layouts/BlogPost.astro'
 ---
