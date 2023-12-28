@@ -1,32 +1,94 @@
 ---
-import { AUTHOR } from "../constants.ts"
+import { AUTHOR } from '../constants';
+import TwitchIcon from './icons/TwitchIcon.astro';
+import MastodonIcon from './icons/MastodonIcon.astro';
+import ThreadsIcon from './icons/ThreadsIcon.astro';
+import BlueskyIcon from './icons/BlueskyIcon.astro';
+import YoutubeIcon from './icons/YoutubeIcon.astro';
+import GithubIcon from './icons/GithubIcon.astro';
 ---
 
 <div class="bio">
-      <p>
-        Written by <strong>{AUTHOR}</strong> who lives and works in the Pacific 
-        Northwest developing solutions to problems (usually with software). He 
-        graduated 2020 from Eastern Washington University as a Computer Science Major, 
-        Bachelor of Science (BS), and works engineering and developing software 
-        solutions in the enterprise telecommunications industry.
-        {` `}
-      </p>
+  <p>
+    Written by <strong>{AUTHOR}</strong> who lives and works in the Pacific Northwest
+    developing solutions to problems (usually with software). He graduated 2020 from
+    Eastern Washington University as a Computer Science Major, Bachelor of Science
+    (BS), and works engineering and developing software solutions in the enterprise
+    telecommunications industry.
+  </p>
+  <span class="icon">
+    <a
+      href="https://github.com/moutansos"
+      target="_blank"
+      rel="noopener noreferrer"><GithubIcon /></a
+    >
+  </span>
+  <span class="icon">
+    <a href="https://twitch.tv/msyke" target="_blank" rel="noopener noreferrer"
+      ><TwitchIcon /></a
+    >
+  </span>
+  <span class="icon">
+    <a
+      href="https://www.youtube.com/@msykecodes"
+      target="_blank"
+      rel="noopener noreferrer"><YoutubeIcon /></a
+    >
+  </span>
+  <span class="icon">
+    <a
+      href="https://mastodon.social/@moutansos"
+      target="_blank"
+      rel="noopener noreferrer"
+      ><MastodonIcon />
+    </a>
+  </span>
+  <span class="icon">
+    <a
+      href="https://threads.net/@moutansos"
+      target="_blank"
+      rel="noopener noreferrer"><ThreadsIcon /></a
+    >
+  </span>
+  <span class="icon">
+    <a
+      href="https://bsky.app/profile/benbrougher.tech"
+      target="_blank"
+      rel="noopener noreferrer"><BlueskyIcon /></a
+    >
+  </span>
 </div>
 
 <style>
-.bio {
-    display: flex;
-}
+  .icon {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: white;
+    color: white;
+    margin: 0 0.5rem 0 0.5rem;
+  }
 
-p {
-  margin-bottom: 1.75em;
-  font-weight: 400;
-  word-wrap: break-word;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  line-height: 1.5em;
-  font-size: var(--standardFontSize);
-}
+  .icon a svg {
+    fill: white;
+    width: 100%;
+    height: 100%;
+  }
+
+  p {
+    margin-bottom: 1.75em;
+    font-weight: 400;
+    word-wrap: break-word;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    line-height: 1.5em;
+    font-size: var(--standardFontSize);
+  }
+
+  .bio {
+    padding-bottom: 1.5rem;
+  }
 </style>
+
