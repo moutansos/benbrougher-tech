@@ -1,0 +1,20 @@
+### Get Twitch Access Token (doesn't work in nvim. Works in httpyac)
+POST https://id.twitch.tv/oauth2/token
+Content-Type: application/x-www-form-urlencoded 
+
+client_id={{client_id}}
+&client_secret={{client_secret}}
+&grant_type=client_credentials
+
+### Get Twitch Broadcaster Details
+
+GET https://api.twitch.tv/helix/channels?broadcaster_id=86145815
+Arthorization: Bearer {{access_token}}
+Client-Id: {{client_id}}
+
+### Get Twitch Stream Details
+
+GET https://api.twitch.tv/helix/streams?user_id=148114007
+Authorization: Bearer {{access_token}}
+Client-Id: {{client_id}}
+

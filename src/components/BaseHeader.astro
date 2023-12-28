@@ -1,5 +1,6 @@
 ---
 import { SITE_NAME } from "../constants";
+import TwitchBanner from "./TwitchBanner.svelte";
 
 export interface Props {
     smallHeader: boolean
@@ -10,7 +11,8 @@ const headerStyle = smallHeader ? "small-header" : "big-header" ;
 const headerProps = `main-header ${headerStyle}`;
 ---
 
-<header class={headerProps}>
+<header class={headerProps}> 
+    <TwitchBanner client:idle/>
     <a href="/">
         <h1>{SITE_NAME}</h1>
     </a>
