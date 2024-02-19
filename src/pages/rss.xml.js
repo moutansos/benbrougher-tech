@@ -3,8 +3,8 @@ import rss, { pagesGlobToRssItems } from '@astrojs/rss';
 
 const postImportResult = import.meta.glob('./posts/*.{md,mdx}');
 
-export const get = async (context) =>
-  rss({
+export async function GET(context) {
+  return rss({
     // `<title>` field in output xml
     title: 'benbrougher.tech',
     // `<description>` field in output xml
@@ -20,3 +20,4 @@ export const get = async (context) =>
     // (optional) inject custom xml
     customData: `<language>en-us</language>`,
   });
+}
