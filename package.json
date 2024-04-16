@@ -9,17 +9,17 @@
   },
   "devDependencies": {
     "@astrojs/image": "^0.15.0",
-    "@astrojs/preact": "^3.1.0",
-    "@astrojs/react": "^3.0.10",
+    "@astrojs/preact": "^3.2.0",
+    "@astrojs/react": "^3.3.0",
     "@astrojs/renderer-preact": "^0.5.0",
     "@astrojs/rss": "^4.0.5",
-    "@astrojs/svelte": "^5.0.3",
-    "astro": "^4.4.0",
-    "autoprefixer": "^10.4.17",
-    "preact": "^10.19.5",
+    "@astrojs/svelte": "^5.4.0",
+    "astro": "^4.6.2",
+    "autoprefixer": "^10.4.19",
+    "preact": "^10.20.2",
     "prettier": "^3.2.5",
     "react": "^18.2.0",
-    "svelte": "^4.2.11"
+    "svelte": "^4.2.14"
   },
   "license": "MIT",
   "main": "n/a",
@@ -31,7 +31,7 @@
     "new-post": "pwsh -File ./scripts/New-BlogPost.ps1"
   },
   "dependencies": {
-    "@giscus/svelte": "^2.4.0",
+    "@giscus/svelte": "^3.0.0",
     "@js-temporal/polyfill": "^0.4.4"
   },
   "type": "module"
