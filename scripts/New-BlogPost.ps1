@@ -1,3 +1,5 @@
+#!/usr/bin/pwsh
+
 [CmdletBinding()]
 param (
     [Parameter(Mandatory)]
