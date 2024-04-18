@@ -28,12 +28,12 @@ Write-Host $myVariable
 In bash, you declare variables by assigning a value to them without a dollar sign:
 
 ```bash
-MY_VARIABLE="Hello, World!"
-echo $MY_VARIABLE
+my_variable="Hello, World!"
+echo $my_variable
 ```
 
-In bash convention for variable names is to use all uppercase letters. As opposed to PowerShell where
-the convention is to use `PascalCase` or `camelCase`.
+In bash convention for variable names is to use all lower, snake case letters. As opposed to 
+PowerShell where the convention is to use `PascalCase` or `camelCase`.
 
 ## Arrays
 
@@ -45,11 +45,12 @@ Write-Host $myArray[0]
 ```
 
 In bash, you declare an array by using parentheses and you access elements by using square brackets
-similar to PowerShell. Unlike PowerShell, you don't have a comma between elements in the array:
+similar to PowerShell. The `declare -a` afterwards defines it as an array. Unlike PowerShell, you 
+don't have a comma between elements in the array:
 
 ```bash
-MY_ARRAY=("Hello" "World")
-echo ${MY_ARRAY[0]}
+declare -a my_array=("Hello" "World")
+echo ${my_array[0]}
 ```
 
 ## Conditionals
@@ -69,9 +70,9 @@ if ($myVariable -eq "Hello, World!") {
 In bash, you use the `if`, `elif`, and `else` keywords:
 
 ```bash
-if [ $MY_VARIABLE = "Hello, World!" ]; then
+if [ $my_variable = "Hello, World!" ]; then
     echo "It's true"
-elif [ $MY_VARIABLE = "Goodbye, World!" ]; then
+elif [ $my_variable = "Goodbye, World!" ]; then
     echo "It's false"
 else
     echo "It's neither. The Universe is a lie."
@@ -105,7 +106,7 @@ while ($i -lt $myArray.Length) {
 In bash you have the `for` loop:
 
 ```bash
-for item in "${MY_ARRAY[@]}"; do
+for item in "${my_array[@]}"; do
     echo $item
 done
 ```
@@ -114,8 +115,8 @@ Also available in bash is the `while` loop:
 
 ```bash
 i=0
-while [ $i -lt ${#MY_ARRAY[@]} ]; do
-    echo ${MY_ARRAY[$i]}
+while [ $i -lt ${#my_array[@]} ]; do
+    echo ${my_array[$i]}
     i=$((i + 1))
 done
 ```
