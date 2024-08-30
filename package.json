@@ -19,7 +19,7 @@
     "preact": "^10.20.2",
     "prettier": "^3.2.5",
     "react": "^18.2.0",
-    "svelte": "^4.2.14"
+    "svelte": "^4.2.19"
   },
   "license": "MIT",
   "main": "n/a",
