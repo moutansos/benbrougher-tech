@@ -14,7 +14,7 @@
     "@astrojs/renderer-preact": "^0.5.0",
     "@astrojs/rss": "^4.0.5",
     "@astrojs/svelte": "^5.4.0",
-    "astro": "^4.6.2",
+    "astro": "^4.16.1",
     "autoprefixer": "^10.4.19",
     "preact": "^10.20.2",
     "prettier": "^3.2.5",
