@@ -21,7 +21,7 @@ param (
 
 $postText = @"
 ---
-tilte: $($title)
+title: $($title)
 pubDate: '$((Get-Date).ToUniversalTime().ToString('yyyy-MM-ddTHH:mm:ss.000Z'))'
 description: $($description)
 layout: '../../layouts/BlogPost.astro'
