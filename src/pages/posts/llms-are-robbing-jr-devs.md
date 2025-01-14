@@ -1,7 +1,7 @@
 ---
-title: AI Is Robbing Jr. Devs
+title: AI is Robbing Jr. Devs
 pubDate: '2025-01-12T19:27:45.000Z'
-description: LLMs are robbing Jr. Devs of Opportunities to Gain Experience
+description: LLMs Are Robbing Jr. Devs of Opportunities to Gain Experience
 layout: '../../layouts/BlogPost.astro'
 ---
 
