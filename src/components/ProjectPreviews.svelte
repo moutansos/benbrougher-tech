@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Project } from '../models/Project';
+  import type { Project } from '../models/Project';
   export let projects: Project[] = [];
 </script>
 

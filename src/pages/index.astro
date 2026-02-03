@@ -3,8 +3,9 @@ import BasePage from "../layouts/BasePage.astro";
 import Bio from "../components/Bio.astro";
 import PostPreview from "../components/PostPreview.astro";
 
-const blogPosts = (await Astro.glob("./posts/*.md"))
-    .sort((a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime());
+const postModules = import.meta.glob('./posts/*.md', { eager: true });
+const blogPosts = Object.values(postModules)
+    .sort((a: any, b: any) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime());
 ---
 
 <BasePage title="Home" smallHeader={false} description={null}>
